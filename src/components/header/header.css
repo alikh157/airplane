@@ -1,0 +1,84 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    direction: rtl;
+}
+
+li, a, button {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+header {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+}
+
+header .logo {
+    cursor: pointer;
+    /*width:10%;*/
+    /*height: 10%;*/
+}
+
+.navLinks {
+    padding-top: 10px;
+    list-style: none;
+}
+
+.navLinks li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.navLinks li a {
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    color: #6c6464;
+    padding: 5px 0;
+    position: relative;
+}
+
+.navLinks li a::after {
+    content: '';
+    background: #ff7314;
+    width: 0;
+    height: 2px;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.5s ease 0s;
+}
+
+.navLinks li a:hover::after {
+    width: 100%;
+}
+
+.login button {
+    padding: 9px 25px;
+    background-color: #dc004e;
+    border: none;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.login button:hover {
+    background-color: #289c0e;
+}
+
+.login {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+

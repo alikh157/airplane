@@ -1,4 +1,18 @@
-.container{
+.page-container {
     min-height: 100vh;
-    background-image: linear-gradient(to right top, #d3dcfe, #cbd7fc, #c3d2fb, #bbcdf9, #b2c8f7, #b2c8f7, #b2c8f7, #b2c8f7, #bbcdf9, #c3d2fb, #cbd7fc, #d3dcfe);
+    background-color: white;
 }
+
+.page-container .searchBar {
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+    border-radius: 0 0 20px 20px;
+    background: url("https://cdn.3click.com/3c-static/images/flight/new-main-slider.webp") no-repeat;
+    background-position-y: -120px;
+    background-position-x: center;
+}
+
