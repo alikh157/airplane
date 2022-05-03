@@ -1,0 +1,4 @@
+.container{
+    min-height: 100vh;
+    background-image: linear-gradient(to right top, #d3dcfe, #cbd7fc, #c3d2fb, #bbcdf9, #b2c8f7, #b2c8f7, #b2c8f7, #b2c8f7, #bbcdf9, #c3d2fb, #cbd7fc, #d3dcfe);
+}
