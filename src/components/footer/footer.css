@@ -8,7 +8,7 @@ body {
     margin: 0;
     box-sizing: border-box;
     /*position: absolute;*/
-    padding: 70px 0;
+    padding: 70px 50px;
 }
 
 .row {
@@ -20,8 +20,9 @@ body {
 }
 
 .footer-col {
-    flex-basis:25%;
-    padding: 0 15px;
+    flex-basis: 25%;
+    padding: 10px;
+    text-align: center;
 }
 
 ul {
@@ -33,9 +34,14 @@ ul {
     font-size: 18px;
     color: #ffffff;
     text-transform: capitalize;
-    margin-bottom: 35px;
+    margin-bottom: 40px;
     font-weight: 500;
     /*position: relative;*/
+}
+
+
+.copy-right {
+    color: white;
 }
 
 .footer-col h4::before {
@@ -99,19 +105,57 @@ ul {
         width: 100%;
     }
 }
-/*.row{*/
-/*    width: 85%;*/
-/*    margin: auto;*/
-/*    display: flex;*/
-/*    flex-wrap: wrap;*/
-/*    align-items: flex-start;*/
-/*    justify-content: space-between;*/
-/*}*/
-/*.footer-col{*/
-/*    flex-basis:25%;*/
-/*    padding: 10px;*/
-
-/*}*/
 
 
+.newsletter {
+    direction: ltr;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 50px;
+}
+
+.newsletter .far {
+    font-size: 18px;
+    margin-right: 10px;
+    color: white;
+}
+
+.newsletter input {
+    direction: ltr;
+    width: 100%;
+    background: transparent;
+    color: #ccc;
+    border: 0;
+    outline: none;
+}
+
+.newsletter button {
+    background: transparent;
+    border-style: none;
+    cursor: pointer;
+}
+
+.newsletter button .fas {
+    font-size: 16px;
+    color: #ccc;
+}
+
+.underline {
+    width: 50%;
+    height: 5px;
+    background: #767676;
+    border-radius: 3px;
+    top: 25px;
+    left: 0;
+}
+.copy-right hr{
+    color: white
+}
+.copy-right p{
+    color: #ccc;
+    font-size: 12px ;
+}
 
