@@ -1,8 +1,28 @@
 import React from "react";
 import './result.css'
 import expandImg from './images/collapse_arrow_48px.png'
-
-export const Result = () => {
+//we select 'data' from props that have key and data
+export const Result = ({data}) => {
+    const {
+        ticketName='',
+        ticketDst='',
+        ticketSrc='',
+        ticketPrice='',
+        ticketInternalOrExternal='',
+        ticketBusinessOrEconomy='',
+        ticketNumber='',
+        ticketAirplaneId: {
+            airplaneAirlineName='',
+            airplaneModel='',
+            airplaneDst='',
+            airplaneSrc='',
+            airplaneImageSrc,
+            airplaneCapacity='',
+            airplaneFlightNumber='',
+            airplaneTicketTakeOffTime='',
+            airplaneTicketLandingTime=''
+        }={},
+    } = data;
     return (
         <div className="result">
             <div className="khar">
@@ -11,7 +31,7 @@ export const Result = () => {
                         انتخاب بلیط
                     </a>
                 </button>
-                <p className="cost">300,000تومان</p>
+                <p className="cost">{ticketPrice}تومان</p>
             </div>
             <div className="flight">
                 <p className="type">اکونومی</p>
