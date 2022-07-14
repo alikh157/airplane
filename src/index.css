@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@font-face {
+  font-family: IRANSansX;
+  font-style: normal;
+  font-weight: 400;
+  src: url('../public/fonts/IRANSansX-Regular.woff') format('woff'),
+  url('../public/fonts/IRANSansX-Regular.woff2') format('woff2');
+}

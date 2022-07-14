@@ -14,5 +14,12 @@
     background: url("https://cdn.3click.com/3c-static/images/flight/new-main-slider.webp") no-repeat;
     background-position-y: -120px;
     background-position-x: center;
+    margin-bottom:20px;
 }
-
+.results{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:20px;
+}

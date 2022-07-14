@@ -1,13 +1,18 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState,useContext} from 'react'
+import {SearchResultContext} from "../../contexts/SearchResultContext";
 import './mainPage.css'
 import SearchBar from '../../components/searchBar/SearchBar';
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import {Result} from "../../components/result/Result";
+import {Login} from "../../components/login/Login";
 import * as api from "../../api";
 
 export const MainPage = () => {
-    const [searchResult, setSearchResult] = useState([]);
+    //without context
+    // const [searchResult, setSearchResult] = useState([]);
+    //this is way of using context - we destructure it...
+    const {searchResult, setSearchResult} = useContext(SearchResultContext);
     //in this way of typing this useEffect rendered once at first.
     //if we want to run this depend on some variable, we set them in deps array
     useEffect(() => {

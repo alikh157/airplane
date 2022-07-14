@@ -10,7 +10,7 @@ export const readAllTickets = ({onError=()=>{}, onSuccess=()=>{}}) => {
 
         new Deserializer({keyForAttribute: "camelCase"}).deserialize(res.data,(error,tickets)=>{
             onSuccess(tickets);
-        })
+        });
     }).catch((error)=>{
         onError(error);
     })
