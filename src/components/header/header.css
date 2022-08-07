@@ -5,7 +5,7 @@
     direction: rtl;
 }
 
-li, a, button {
+li, a {
     white-space: nowrap;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
@@ -61,26 +61,28 @@ header .logo {
     width: 100%;
 }
 
-.login button {
-    padding: 9px 25px;
-    background-color: #dc004e;
-    border: none;
-    border-radius: 10px;
-    justify-content: center;
-    align-items: center;
-    margin-left: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    white-space: nowrap
-}
+/*.login button {*/
+/*    padding: 9px 25px;*/
+/*    background-color: #dc004e;*/
+/*    border: none;*/
+/*    border-radius: 10px;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    margin-left: 20px;*/
+/*    cursor: pointer;*/
+/*    transition: all 0.3s ease 0s;*/
+/*    white-space: nowrap*/
+/*}*/
 
 .login button:hover {
-    background-color: #289c0e;
+    background-color: rgba(231, 126, 129, 0.58);
+    color:black;
 }
 
 .login {
     display: flex;
     justify-content: flex-end;
     flex-grow: 1;
+    color: black;
 }
 

@@ -15,12 +15,12 @@ function change() {
         container.classList.add("sign-up-mode");
     });
     sign_in_btn.addEventListener('click', () => {
-        container.classList.remove("sign_up_mode");
+        container.classList.remove("sign-up-mode");
     });
 }
 export const Login = () => {
     return (
-        <div className="container">
+        <div className="container" >
             <div className="forms-container">
                 <div className="signin-signup">
                     <form action="#" className="sign-in-form">
@@ -88,7 +88,7 @@ export const Login = () => {
                         <h3>One of us?</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto doloremque incidunt
                             quas?</p>
-                        <button className="btn transparent" id={"sign-in-btn"} onClick={()=>change()}>Sign in</button>
+                        <button className="btn transparent" id={"sign-in-btn"} onClick={change}>Sign in</button>
                     </div>
                     <img src={signupImage} className="image" alt="signupImage"/>
                 </div>
@@ -99,7 +99,7 @@ export const Login = () => {
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto doloremque incidunt
                             quas?
                         </p>
-                        <button className="btn transparent" id={"sign-up-btn"} onClick={()=>change()}>
+                        <button className="btn transparent" id={"sign-up-btn"} onClick={change}>
                             Sign up
                         </button>
                     </div>
