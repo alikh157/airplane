@@ -7,7 +7,7 @@
 
 li, a {
     white-space: nowrap;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-family: IRANSansX, sans-serif;
     font-weight: 500;
     font-size: 16px;
     color: #ffffff;
@@ -61,28 +61,45 @@ header .logo {
     width: 100%;
 }
 
-/*.login button {*/
-/*    padding: 9px 25px;*/
-/*    background-color: #dc004e;*/
-/*    border: none;*/
-/*    border-radius: 10px;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    margin-left: 20px;*/
-/*    cursor: pointer;*/
-/*    transition: all 0.3s ease 0s;*/
-/*    white-space: nowrap*/
-/*}*/
+.login button {
+    padding: 9px 25px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    white-space: nowrap;
+    border: 2px solid #ff731400;
+    color: #1c1c1c;
+}
 
 .login button:hover {
-    background-color: rgba(231, 126, 129, 0.58);
-    color:black;
+    color:#ff7314;
+    border: 2px solid #ff7314ff;
+    transition:all 300ms ease-in-out;
 }
 
 .login {
     display: flex;
     justify-content: flex-end;
     flex-grow: 1;
-    color: black;
+    font-family: IRANSansX, sans-serif;
+}
+.login .icon {
+    cursor: pointer;
+    position: relative;
+    opacity: 0;
+
+    transition: 0.2s;
 }
 
+.login Button:hover .icon {
+    padding-left: 20px;
+    opacity: 1;
+}
+
+.login Button:hover.icon:after {
+    opacity: 1;
+    left: 0;
+}

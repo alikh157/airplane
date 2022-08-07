@@ -1,5 +1,5 @@
 .search {
-    font-family: IRANSansX;
+    font-family: IRANSansX,sans-serif;
     width: 90%;
     max-width: 900px;
     text-align: center;
@@ -38,7 +38,7 @@
     color: #fff;
     padding: 15px 40px;
     border: none;
-    border-radius: 6px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
