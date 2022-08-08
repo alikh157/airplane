@@ -7,10 +7,31 @@ export const readAllTickets = ({onError=()=>{}, onSuccess=()=>{}}) => {
         method: 'post',
         url: apiConstant.BASE_URL + '/ticket/get'
     }).then((res)=>{
-
         new Deserializer({keyForAttribute: "camelCase"}).deserialize(res.data,(error,tickets)=>{
             onSuccess(tickets);
         });
+    }).catch((error)=>{
+        onError(error);
+    })
+}
+export const loginAccount = (account,{onError=()=>{}, onSuccess=()=>{}}) => {
+    axios({
+        method: 'post',
+        url: apiConstant.BASE_URL + '/account/login',
+        data:account
+    }).then((res)=>{
+        onSuccess(res.status)
+    }).catch((error)=>{
+        onError(error);
+    })
+}
+export const registerAccount = (account,{onError=()=>{}, onSuccess=()=>{}}) => {
+    axios({
+        method: 'post',
+        url: apiConstant.BASE_URL + '/account/create',
+        data:account
+    }).then((res)=>{
+        onSuccess(res.status)
     }).catch((error)=>{
         onError(error);
     })

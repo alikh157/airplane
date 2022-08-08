@@ -60,8 +60,8 @@ header .logo {
 .navLinks li a:hover::after {
     width: 100%;
 }
-
-.login button {
+/*button convert to a tag while rendering*/
+.login a {
     padding: 9px 25px;
     border-radius: 10px;
     justify-content: center;
@@ -74,11 +74,6 @@ header .logo {
     color: #1c1c1c;
 }
 
-.login button:hover {
-    color:#ff7314;
-    border: 2px solid #ff7314ff;
-    transition:all 300ms ease-in-out;
-}
 
 .login {
     display: flex;
@@ -90,16 +85,20 @@ header .logo {
     cursor: pointer;
     position: relative;
     opacity: 0;
-
     transition: 0.2s;
 }
 
-.login Button:hover .icon {
+.login a:hover {
+    color:#ff7314;
+    border: 2px solid #ff7314ff;
+    transition:all 300ms ease-in-out;
+}
+.login a:hover .icon {
     padding-left: 20px;
     opacity: 1;
 }
 
-.login Button:hover.icon:after {
+.login a:hover.icon:after {
     opacity: 1;
     left: 0;
 }

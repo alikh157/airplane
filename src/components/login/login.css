@@ -1,9 +1,9 @@
-
-.container input {
-    font-family: "Poppins", sans-serif;
+*{
+    font-family: IRANSansX, serif;
 }
 
 .container {
+    font-family: IRANSansX, serif;
     position: relative;
     /*left: 0;*/
     min-width: 100vw;

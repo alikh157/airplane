@@ -20,6 +20,7 @@ const baseTheme = createTheme({
 function App() {
     return (
         <div className="App">
+
             <SearchResultContextProvider>
                 <Routes>
                     <Route path={"/"} element={<MainPage/>}/>

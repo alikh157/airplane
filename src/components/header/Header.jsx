@@ -25,20 +25,34 @@ const Header = () => {
             <img className={"logo"} src={logo} alt="logo" height={"70px"}/>
             <nav>
                 <ul className="navLinks">
-                    <li><a href="#">صفحه اصلی</a></li>
+                    <li><a href="/">صفحه اصلی</a></li>
                     <li><a href="#">پیگیری بلیط</a></li>
                     <li><a href="#">درباره ما</a></li>
                     <li><a href="#">تماس باما</a></li>
                 </ul>
             </nav>
             <div className="login">
-                <Button
+                {
+                    window.localStorage.getItem("accountPhoneNumber")?
+                        <Button
+                            variant="text"
+                            color="secondary"
+                            href="#"
+                            size={"large"}
+                            className={classes.login}
+                        > accountPhoneNumber <FontAwesomeIcon className={'icon'} style={{"transform": 'rotate(180deg)'}}
+                                                       icon={solid('arrow-right-to-bracket')}/></Button>
+                        :
+                    <Button
                     variant="text"
                     color="secondary"
                     href="/login"
                     size={"large"}
                     className={classes.login}
-                > ورود/ثبتنام <FontAwesomeIcon className={'icon'} style={{"transform": 'rotate(180deg)'}} icon={solid('arrow-right-to-bracket')}/></Button>
+                > ورود/ثبتنام <FontAwesomeIcon className={'icon'} style={{"transform": 'rotate(180deg)'}}
+                                               icon={solid('arrow-right-to-bracket')}/></Button>
+
+                }
             </div>
         </header>
     );
