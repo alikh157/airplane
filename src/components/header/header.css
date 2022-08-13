@@ -20,6 +20,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 5%;
+    margin-bottom: 25px;
+    box-shadow: 0 0 10px rgba(62, 62, 62, 0.84);
 }
 
 header .logo {
@@ -81,7 +83,7 @@ header .logo {
     flex-grow: 1;
     font-family: IRANSansX, sans-serif;
 }
-.login .icon {
+.login .iconLogin {
     cursor: pointer;
     position: relative;
     opacity: 0;
@@ -93,12 +95,34 @@ header .logo {
     border: 2px solid #ff7314ff;
     transition:all 300ms ease-in-out;
 }
-.login a:hover .icon {
+.login a:hover .iconLogin {
     padding-left: 20px;
     opacity: 1;
 }
 
-.login a:hover.icon:after {
+.login a:hover.iconUser:after {
+    opacity: 1;
+    left: 0;
+}
+
+.login .iconUser {
+    cursor: pointer;
+    position: relative;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.login a:hover {
+    color:#ff7314;
+    border: 2px solid #ff7314ff;
+    transition:all 300ms ease-in-out;
+}
+.login a:hover .iconUser {
+    padding-right: 20px;
+    opacity: 1;
+}
+
+.login a:hover.iconUser:after {
     opacity: 1;
     left: 0;
 }

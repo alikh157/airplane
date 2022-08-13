@@ -20,7 +20,7 @@ export const loginAccount = (account,{onError=()=>{}, onSuccess=()=>{}}) => {
         url: apiConstant.BASE_URL + '/account/login',
         data:account
     }).then((res)=>{
-        onSuccess(res.status)
+        onSuccess(res.data.data.attributes['auth-token'])
     }).catch((error)=>{
         onError(error);
     })

@@ -1,5 +1,7 @@
 import './App.css';
 import {MainPage} from "./pages/mainPage/MainPage";
+import {CallUsPage} from "./pages/callUsPage/CallUsPage";
+import {AboutUsPage} from "./pages/aboutUsPage/AboutUsPage";
 import {Routes, Route, Link} from "react-router-dom";
 import {SearchResultContextProvider} from "./contexts/SearchResultContext";
 import {Result} from "./components/result/Result";
@@ -27,6 +29,8 @@ function App() {
                     <Route path={"/login"} element={<Login/>}/>
                     <Route path={"/result"} element={<Result/>}/>
                     <Route path={"/footer"} element={<Footer/>}/>
+                    <Route path={"/callus"} element={<CallUsPage/>}/>
+                    <Route path={"/about"} element={<AboutUsPage/>}/>
                 </Routes>
             </SearchResultContextProvider>
         </div>

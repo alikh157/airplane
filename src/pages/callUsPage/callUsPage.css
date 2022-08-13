@@ -1,0 +1,50 @@
+.page-container{
+    margin: 0;
+    padding: 0;
+}
+.content{
+    font-family: IRANSansX,'serif';
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 100vh;
+}
+.content-box{
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    width: 800px;
+    height: 500px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.14);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.title{
+    margin-right: 200px;
+    position: relative;
+}
+.title::after{
+    direction: rtl;
+    position: absolute;
+    right:0;
+    bottom:-5px;
+    background-color: #ff7314;
+    content: '';
+    height: 3px;
+    width: 11%;
+}
+.map, .text{
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+    overflow: hidden;
+}
+.text-content{
+    font-size: 14px;
+}
+.text-title{
+    font-weight: bold;
+    font-size: 16px;
+}

@@ -30,6 +30,8 @@ export const Login = () => {
             onError: (err) => {
                 console.log(err.message);
             }, onSuccess: (msg) => {
+                localStorage.setItem('auth-token', msg);
+                localStorage.setItem('accountPhoneNumber', account.accountPhoneNumber);
                 console.log(msg);
             }
         })

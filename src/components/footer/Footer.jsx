@@ -24,7 +24,7 @@ const Footer = () => {
                         <div className="underline"><span></span></div>
                     </h4>
                     <ul>
-                        <li><a href="#">
+                        <li><a href="/callus">
                             تهران محله ولنجک
                             خیابان طهماسب،
                             <br/>
@@ -42,10 +42,10 @@ const Footer = () => {
                         <div className="underline"><span></span></div>
                     </h4>
                     <ul>
-                        <li><a href="#">صفحه اصلی</a></li>
+                        <li><a href="/">صفحه اصلی</a></li>
                         <li><a href="#">پیگیری بلیط</a></li>
-                        <li><a href="#">درباره ما</a></li>
-                        <li><a href="#">تماس باما</a></li>
+                        <li><a href="/about">درباره ما</a></li>
+                        <li><a href="/callus">تماس باما</a></li>
                     </ul>
                 </div>
                 <div className="footer-col">

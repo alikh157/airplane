@@ -27,30 +27,30 @@ const Header = () => {
                 <ul className="navLinks">
                     <li><a href="/">صفحه اصلی</a></li>
                     <li><a href="#">پیگیری بلیط</a></li>
-                    <li><a href="#">درباره ما</a></li>
-                    <li><a href="#">تماس باما</a></li>
+                    <li><a href="/about">درباره ما</a></li>
+                    <li><a href="/callus">تماس باما</a></li>
                 </ul>
             </nav>
             <div className="login">
                 {
-                    window.localStorage.getItem("accountPhoneNumber")?
+                    window.localStorage.getItem("accountPhoneNumber") ?
                         <Button
                             variant="text"
                             color="secondary"
                             href="#"
                             size={"large"}
                             className={classes.login}
-                        > accountPhoneNumber <FontAwesomeIcon className={'icon'} style={{"transform": 'rotate(180deg)'}}
-                                                       icon={solid('arrow-right-to-bracket')}/></Button>
+                        > {window.localStorage.getItem("accountPhoneNumber")} <FontAwesomeIcon className={'iconUser'}
+                                                              icon={solid('user')}/></Button>
                         :
-                    <Button
-                    variant="text"
-                    color="secondary"
-                    href="/login"
-                    size={"large"}
-                    className={classes.login}
-                > ورود/ثبتنام <FontAwesomeIcon className={'icon'} style={{"transform": 'rotate(180deg)'}}
-                                               icon={solid('arrow-right-to-bracket')}/></Button>
+                        <Button
+                            variant="text"
+                            color="secondary"
+                            href="/login"
+                            size={"large"}
+                            className={classes.login}
+                        > ورود/ثبتنام <FontAwesomeIcon className={'iconLogin'} style={{"transform": 'rotate(180deg)'}}
+                                                       icon={solid('arrow-right-to-bracket')}/></Button>
 
                 }
             </div>
