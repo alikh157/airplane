@@ -34,14 +34,28 @@ const Header = () => {
             <div className="login">
                 {
                     window.localStorage.getItem("accountPhoneNumber") ?
-                        <Button
+                 [       <Button
                             variant="text"
                             color="secondary"
                             href="#"
                             size={"large"}
                             className={classes.login}
                         > {window.localStorage.getItem("accountPhoneNumber")} <FontAwesomeIcon className={'iconUser'}
-                                                              icon={solid('user')}/></Button>
+                                                              icon={solid('user')}/></Button>,
+                        <Button
+                            variant="text"
+                            color="secondary"
+                            href="/"
+                            size={"large"}
+                            style={{"color":"rgba(255,115,20,0.78)"}}
+                            onClick={()=>window.localStorage.clear()}
+                            className={classes.login}
+                        >
+                            خروج
+                            <FontAwesomeIcon className={'iconExit'}
+                                             icon={solid('arrow-right-from-bracket')}/>
+                        </Button>
+                 ]
                         :
                         <Button
                             variant="text"
@@ -51,21 +65,10 @@ const Header = () => {
                             className={classes.login}
                         > ورود/ثبتنام <FontAwesomeIcon className={'iconLogin'} style={{"transform": 'rotate(180deg)'}}
                                                        icon={solid('arrow-right-to-bracket')}/></Button>
-
                 }
             </div>
         </header>
     );
 };
-{/*<img src={ticketImage} alt="" style={{*/
-}
-{/*    color:"red",*/
-}
-{/*    background_color:"red"*/
-}
-{/*}}/>*/
-}
-{/*<FontAwesomeIcon icon={solid('ticket-airline')}/>*/
-}
 
 export default Header;

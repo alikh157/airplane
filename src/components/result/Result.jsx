@@ -21,22 +21,25 @@ const Item = styled(Box)(({theme}) => ({
 //we select 'data' from props that have key and data
 export const Result = ({data}) => {
     const {
-        ticketName = '',
-        ticketDst = '',
-        ticketSrc = '',
-        ticketPrice = '',
-        ticketInternalOrExternal = '',
-        ticketBusinessOrEconomy = '',
-        ticketNumber = '',
-        ticketAirplaneObject: {
-            airplaneAirlineName = '',
-            airplaneModel = '',
-            airplaneImageSrc,
-            airplaneCapacity = '',
-            airplaneFlightNumber = '',
-            airplaneTicketTakeOffTime = '',
-            airplaneTicketLandingTime = ''
+        tripAirplaneObject: {
+            tripAirplaneId = '',
+            tripAirplaneAirlineName = '',
+            tripAirplaneModel = '',
+            tripAirplaneImageSrc = '',
+            tripAirplaneCapacity = '',
+            tripAirplaneFlightNumber = '',
+            tripAirplaneCreateAt = ''
         } = {},
+        tripId = "",
+        tripName = '',
+        tripDst = '',
+        tripSrc = '',
+        tripPrice = '',
+        tripTakeOffTime = '',
+        tripLandingTime = '',
+        tripDate = '',
+        tripInternalOrExternal = '',
+        tripBusinessOrEconomy = '',
     } = data;
     return (
         <Stack className="result" direction="row" spacing={2}>
@@ -46,7 +49,7 @@ export const Result = ({data}) => {
                         انتخاب بلیط
                     </a>
                 </button>
-                <p className="cost">{ticketPrice}تومان</p>
+                <p className="cost">{tripPrice} تومان </p>
             </Item>
             <Item sx={{
                 display: "flex",
@@ -57,29 +60,42 @@ export const Result = ({data}) => {
                 alignItems: "center",
             }}>
                 <div className="src">
-                    <h6 className="city">{ticketSrc}</h6>
+                    <h6 className="city">{tripSrc}</h6>
                     <img className={"imageHint"} src={airplane_take_off} alt="taking off"/>
-                    <p className="time">{airplaneTicketTakeOffTime}</p>
+                    <p className="time">{tripTakeOffTime}</p>
                 </div>
                 <div className="travelImage">
                     <img src={Asset} style={{height: "auto", width: '190px'}} alt="travel image"/>
+                    {/*<p className="time" style={{marginTop:'5px'}}>{tripDate}</p>*/}
                 </div>
                 <div className="dst">
-                    <h6 className="city">{ticketDst}</h6>
+                    <h6 className="city">{tripDst}</h6>
                     <img className={"imageHint"} src={airplane_landing} alt="landing"/>
-                    <p className="time">{airplaneTicketLandingTime}</p>
+                    <p className="time">{tripLandingTime}</p>
                 </div>
                 <div className="flight">
-                    <p className="type">{ticketBusinessOrEconomy}</p>
-                    <p className="num">{airplaneCapacity}</p>
+                    <p className="type">{tripBusinessOrEconomy}</p>
+                    <p className="num">{tripAirplaneCapacity}</p>
+                </div>
+            </Item>
+            <Item sx={{
+                display: "flex",
+                flexDirection: "row",
+                width: "50%",
+                justifyContent: "center",
+                alignItems: "center",
+            }}>
+                <div className="flight">
+                    <p style={{ margin: '0 0 5px 0'}}>{tripSrc} به {tripDst}</p>
+                    <p>{tripDate}</p>
                 </div>
             </Item>
             <Item>
                 <div className="factory">
-                    <img src={`${apiConstant.BASE_URL}/airplane/get/img?fileName=${airplaneImageSrc}`} width="70px"
+                    <img src={`${apiConstant.BASE_URL}/airplane/get/img?fileName=${tripAirplaneImageSrc}`} width="70px"
                          height="60px"
                          alt="کاسپین"/>
-                    <p>{airplaneAirlineName}</p>
+                    <p>{tripAirplaneAirlineName}</p>
                 </div>
             </Item>
         </Stack>

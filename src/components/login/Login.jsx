@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
+
 import './login.css';
 // import '../../temp.js';
 import {regular, solid} from "@fortawesome/fontawesome-svg-core/import.macro";
@@ -23,6 +25,7 @@ function change() {
 
 export const Login = () => {
     const [account, setAccount] = useState([]);
+    const navigate= useNavigate();
     const submitLoginHandler = (e) => {
         e.preventDefault();
         delete account.accountEmail;
@@ -32,6 +35,7 @@ export const Login = () => {
             }, onSuccess: (msg) => {
                 localStorage.setItem('auth-token', msg);
                 localStorage.setItem('accountPhoneNumber', account.accountPhoneNumber);
+                navigate('/');
                 console.log(msg);
             }
         })

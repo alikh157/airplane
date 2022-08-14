@@ -21,6 +21,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-around;
 }
 .about-title{
     margin-right: 100px;
@@ -48,4 +49,9 @@
 .text-title{
     font-weight: bold;
     font-size: 16px;
+}
+.about-images{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

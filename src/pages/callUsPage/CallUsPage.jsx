@@ -10,12 +10,12 @@ export const CallUsPage = () => {
             <Header/>
             <ul>
                 <li>
-                    <h2 className="title">
+                    <h2 className="callUs-title">
                         تماس باما
                     </h2>
                 </li>
             </ul>
-            <div className="content">
+            <div className="callUs-content">
                 <div className="content-box">
                     <div className="text">
                         <p className="text-title">

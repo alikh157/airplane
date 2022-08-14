@@ -16,7 +16,7 @@ export const MainPage = () => {
     //in this way of typing this useEffect rendered once at first.
     //if we want to run this depend on some variable, we set them in deps array
     useEffect(() => {
-        api.readAllTickets({
+        api.readAllTrips({
             onError: (error) => {
                 //here we can define what we wanna do with an error
                 console.log(error);
@@ -43,7 +43,7 @@ export const MainPage = () => {
                     })
                 }
             </div>
-            {/*<Footer/>*/}
+            <Footer/>
         </div>
     );
 }

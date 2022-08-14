@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
 }
-.content{
+.callUs-content{
     font-family: IRANSansX,'serif';
     display: flex;
     flex-direction: row;
@@ -21,11 +21,11 @@
     flex-direction: row;
     align-items: center;
 }
-.title{
+.callUs-title{
     margin-right: 200px;
     position: relative;
 }
-.title::after{
+.callUs-title::after{
     direction: rtl;
     position: absolute;
     right:0;
