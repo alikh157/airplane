@@ -3,6 +3,7 @@ import './footer.css'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {solid, regular, brands} from '@fortawesome/fontawesome-svg-core/import.macro';
 import {faCopyright} from "@fortawesome/free-solid-svg-icons";
+import React from "react";
 
 const Footer = () => {
     return (
@@ -43,7 +44,7 @@ const Footer = () => {
                     </h4>
                     <ul>
                         <li><a href="/">صفحه اصلی</a></li>
-                        <li><a href="#">پیگیری بلیط</a></li>
+                        <li><a href="/profile">پیگیری بلیط</a></li>
                         <li><a href="/about">درباره ما</a></li>
                         <li><a href="/callus">تماس باما</a></li>
                     </ul>
@@ -69,7 +70,7 @@ const Footer = () => {
             </div>
             <div className="copy-right">
                 <hr/>
-                    <p style={{'textAlign':"left" ,'direction':'ltr'}}>@copy right license of alikh157 project 2022</p>
+                <p style={{'textAlign': "left", 'direction': 'ltr'}}>@copy right license of alikh157 project 2022</p>
             </div>
         </footer>
     );

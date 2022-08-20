@@ -5,7 +5,7 @@ import './login.css';
 // import '../../temp.js';
 import {regular, solid} from "@fortawesome/fontawesome-svg-core/import.macro";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import signupImage from './images/undraw_aircraft_re.svg';
+import signupImage from './images/undraw_aircraft_re_m05i.svg';
 import signinImage from './images/undraw_login_re_4vu2.svg';
 import * as api from "../../api";
 
@@ -48,6 +48,7 @@ export const Login = () => {
                 console.log(err.message);
             }, onSuccess: (msg) => {
                 console.log(msg);
+                navigate('/login');
             }
         })
         // console.log(e)
@@ -61,7 +62,7 @@ export const Login = () => {
                             ورود
                         </h2>
                         <div className="input-field">
-                            <FontAwesomeIcon icon={solid('phone')} style={{
+                            <FontAwesomeIcon icon={solid('mobile')} style={{
                                 textAlign: "center",
                                 lineHeight: "55px",
                                 color: "#acacac",
@@ -70,7 +71,6 @@ export const Login = () => {
                             <input type="text" placeholder={"شماره همراه خود را وارد کنيد"}
                                    onChange={e => setAccount({...account, accountPhoneNumber: e.target.value})}
                                    value={account.accountPhoneNumber}/>
-
                         </div>
                         <div className="input-field">
                             <FontAwesomeIcon icon={solid('lock')} style={{

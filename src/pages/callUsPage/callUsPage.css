@@ -13,6 +13,7 @@
 }
 .content-box{
     background-color: #f7f7f7;
+    padding: 20px;
     border-radius: 10px;
     width: 800px;
     height: 500px;
@@ -23,16 +24,17 @@
 }
 .callUs-title{
     margin-right: 200px;
+    color:#24262b;
     position: relative;
 }
 .callUs-title::after{
     direction: rtl;
     position: absolute;
     right:0;
-    bottom:-5px;
+    bottom:-8px;
     background-color: #ff7314;
     content: '';
-    height: 3px;
+    height: 2px;
     width: 11%;
 }
 .map, .text{

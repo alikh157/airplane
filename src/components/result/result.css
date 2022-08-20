@@ -57,10 +57,10 @@
     justify-content: center;
     align-items: center;
     background: rgba(232, 7, 7, 0.15);
-    box-shadow: 0 5px 20px rgba(250, 5, 5, 0.4);
+    box-shadow: 0 0 10px rgba(250, 5, 5, 0.2);
     border-top: 1px solid rgba(238, 6, 6, 0.1);
     border-bottom: 1px solid rgba(238, 6, 6, 0.1);
-    border-radius: 30px;
+    border-radius: 10px;
     color: #f3f3f3;
     font-weight: 400;
     letter-spacing: 1px;

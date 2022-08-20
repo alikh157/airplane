@@ -16,6 +16,7 @@
     background-color: #f7f7f7;
     border-radius: 10px;
     width: 90%;
+    padding: 20px;
     height: 85%;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.14);
     display: flex;
@@ -25,17 +26,18 @@
 }
 .about-title{
     margin-right: 100px;
+    color: #24262b;
     position: relative;
 }
 .about-title::after{
     direction: rtl;
     position: absolute;
     right:0;
-    bottom:-5px;
+    bottom:-8px;
     background-color: #ff7314;
     content: '';
-    height: 3px;
-    width: 7%;
+    height: 2px;
+    width: 8%;
 }
 .map, .text{
     width: 50%;

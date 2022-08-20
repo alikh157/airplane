@@ -2,6 +2,7 @@ import './App.css';
 import {MainPage} from "./pages/mainPage/MainPage";
 import {CallUsPage} from "./pages/callUsPage/CallUsPage";
 import {AboutUsPage} from "./pages/aboutUsPage/AboutUsPage";
+import {ProfilePage} from "./pages/profilePage/ProfilePage";
 import {Routes, Route, Link} from "react-router-dom";
 import {SearchResultContextProvider} from "./contexts/SearchResultContext";
 import {Result} from "./components/result/Result";
@@ -28,6 +29,8 @@ function App() {
                     <Route path={"/"} element={<MainPage/>}/>
                     <Route path={"/login"} element={<Login/>}/>
                     <Route path={"/result"} element={<Result/>}/>
+                    <Route path={"/profile"}
+                           element={window.localStorage.getItem("accountPhoneNumber") ? <ProfilePage/> : <Login/>}/>
                     <Route path={"/footer"} element={<Footer/>}/>
                     <Route path={"/callus"} element={<CallUsPage/>}/>
                     <Route path={"/about"} element={<AboutUsPage/>}/>

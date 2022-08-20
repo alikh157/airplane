@@ -60,3 +60,25 @@ export const registerAccount = (account,{onError=()=>{}, onSuccess=()=>{}}) => {
         onError(error);
     })
 }
+export const updateAccount = (account,{onError=()=>{}, onSuccess=()=>{}}) => {
+    axios({
+        method: 'post',
+        url: apiConstant.BASE_URL + '/account/update',
+        data:account
+    }).then((res)=>{
+        onSuccess(res.status)
+    }).catch((error)=>{
+        onError(error);
+    })
+}
+export const readAccount = (accountId,{onError=()=>{}, onSuccess=()=>{}}) => {
+    axios({
+        method: 'post',
+        url: apiConstant.BASE_URL + '/account/read',
+        data:accountId
+    }).then((res)=>{
+        onSuccess(res.status)
+    }).catch((error)=>{
+        onError(error);
+    })
+}

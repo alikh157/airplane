@@ -26,7 +26,9 @@ const Header = () => {
             <nav>
                 <ul className="navLinks">
                     <li><a href="/">صفحه اصلی</a></li>
-                    <li><a href="#">پیگیری بلیط</a></li>
+                    <li>
+                        <a href="/profile">پیگیری بلیط</a>
+                    </li>
                     <li><a href="/about">درباره ما</a></li>
                     <li><a href="/callus">تماس باما</a></li>
                 </ul>
@@ -34,28 +36,28 @@ const Header = () => {
             <div className="login">
                 {
                     window.localStorage.getItem("accountPhoneNumber") ?
-                 [       <Button
+                        [<Button
                             variant="text"
                             color="secondary"
                             href="#"
                             size={"large"}
                             className={classes.login}
                         > {window.localStorage.getItem("accountPhoneNumber")} <FontAwesomeIcon className={'iconUser'}
-                                                              icon={solid('user')}/></Button>,
-                        <Button
-                            variant="text"
-                            color="secondary"
-                            href="/"
-                            size={"large"}
-                            style={{"color":"rgba(255,115,20,0.78)"}}
-                            onClick={()=>window.localStorage.clear()}
-                            className={classes.login}
-                        >
-                            خروج
-                            <FontAwesomeIcon className={'iconExit'}
-                                             icon={solid('arrow-right-from-bracket')}/>
-                        </Button>
-                 ]
+                                                                                               icon={solid('user')}/></Button>,
+                            <Button
+                                variant="text"
+                                color="secondary"
+                                href="/"
+                                size={"large"}
+                                style={{"color": "rgba(255,115,20,0.78)"}}
+                                onClick={() => window.localStorage.clear()}
+                                className={classes.login}
+                            >
+                                خروج
+                                <FontAwesomeIcon className={'iconExit'}
+                                                 icon={solid('arrow-right-from-bracket')}/>
+                            </Button>
+                        ]
                         :
                         <Button
                             variant="text"
@@ -63,8 +65,8 @@ const Header = () => {
                             href="/login"
                             size={"large"}
                             className={classes.login}
-                        > ورود/ثبتنام <FontAwesomeIcon className={'iconLogin'} style={{"transform": 'rotate(180deg)'}}
-                                                       icon={solid('arrow-right-to-bracket')}/></Button>
+                        > ورود/ثبت نام <FontAwesomeIcon className={'iconLogin'} style={{"transform": 'rotate(180deg)'}}
+                                                        icon={solid('arrow-right-to-bracket')}/></Button>
                 }
             </div>
         </header>
