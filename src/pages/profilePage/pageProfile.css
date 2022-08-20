@@ -49,7 +49,34 @@
     height: 2px;
     width: 20%;
 }
+.edit-field{
+    width: 30%  ;
+    position: relative;
+    max-width: 380px;
+    height: 55px;
+    align-items: center;
+    background-color: #f0f0f0;
+    margin: 0 0 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 1rem 0 0;
+}
+.edit-field input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+}
 
+.edit-field input::placeholder {
+    color: #aaa;
+    font-weight: 500;
+}
 .editBtn {
     width: 150px;
     height: 49px;

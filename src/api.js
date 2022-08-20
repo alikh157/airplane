@@ -71,13 +71,17 @@ export const updateAccount = (account,{onError=()=>{}, onSuccess=()=>{}}) => {
         onError(error);
     })
 }
-export const readAccount = (accountId,{onError=()=>{}, onSuccess=()=>{}}) => {
+export const readAccount = ({onError=()=>{}, onSuccess=()=>{}}) => {
     axios({
         method: 'post',
         url: apiConstant.BASE_URL + '/account/read',
-        data:accountId
+        headers:{
+            'auth-token':window.localStorage.getItem("auth-token")
+        }
     }).then((res)=>{
-        onSuccess(res.status)
+        new Deserializer({keyForAttribute: "camelCase"}).deserialize(res.data,(error,accountInfo)=>{
+            onSuccess(accountInfo);
+        });
     }).catch((error)=>{
         onError(error);
     })

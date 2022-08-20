@@ -9,6 +9,7 @@ import {Result} from "./components/result/Result";
 import {Login} from "./components/login/Login";
 import Footer from "./components/footer/Footer";
 import {createTheme, ThemeProvider, styled} from '@mui/material/styles';
+import {AccountContextProvider} from "./contexts/AccountContext";
 
 const baseTheme = createTheme({
     palette: {
@@ -24,7 +25,7 @@ function App() {
     return (
         <div className="App">
 
-            <SearchResultContextProvider>
+            <AccountContextProvider>
                 <Routes>
                     <Route path={"/"} element={<MainPage/>}/>
                     <Route path={"/login"} element={<Login/>}/>
@@ -35,7 +36,7 @@ function App() {
                     <Route path={"/callus"} element={<CallUsPage/>}/>
                     <Route path={"/about"} element={<AboutUsPage/>}/>
                 </Routes>
-            </SearchResultContextProvider>
+            </AccountContextProvider>
         </div>
     );
 }
