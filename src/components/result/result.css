@@ -25,6 +25,7 @@
 .result .cost {
     color: green;
     font-weight: bold;
+    min-width: 100px;
 }
 
 .imageHint {
@@ -46,9 +47,10 @@
     margin: 10px 10px 10px 20px;
 }
 
-.buyButton .buy a {
+.buyButton .buy p {
     border: none;
     position: absolute;
+    font-weight: bold;
     top: 0;
     left: 0;
     width: 100%;
@@ -62,32 +64,27 @@
     border-bottom: 1px solid rgba(238, 6, 6, 0.1);
     border-radius: 10px;
     color: #f3f3f3;
-    font-weight: 400;
     letter-spacing: 1px;
     z-index: 1;
     text-decoration: none;
     overflow: hidden;
-    transition: 0.5s;
+    transition: 0.3s;
     backdrop-filter: blur(15px);
 }
 
-.buyButton .buy:hover a {
-    letter-spacing: 2px;
-}
-
-.buyButton .buy a::before {
+.buyButton .buy p::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 50%;
     height: 100%;
-    background: linear-gradient(to left, rgba(250, 107, 107, 0.5), transparent);
+    background: linear-gradient(to left, rgba(250, 107, 107, 0.36), transparent);
     transform: skewX(45deg) translateX(0);
     transition: 0.5s;
 }
 
-.buyButton .buy:hover a::before {
+.buyButton .buy:hover p::before {
     transform: skewX(45deg) translateX(200%);
     border: none;
 }
@@ -103,7 +100,7 @@
     height: 10px;
     background: #d90e0e;
     border-radius: 10px;
-    transition: 0.5s;
+    transition: 0.3s;
     transition-delay: 0s;
 }
 
@@ -112,7 +109,7 @@
     height: 50%;
     width: 80%;
     border-radius: 30px;
-    transition-delay: 0.5s;
+    transition-delay: 0.3s;
 }
 .buyButton .buy::after {
     content: '';
@@ -125,7 +122,7 @@
     height: 10px;
     background: #d90e0e;
     border-radius: 10px;
-    transition: 0.5s;
+    transition: 0.3s;
     transition-delay: 0s;
 }
 
@@ -134,7 +131,7 @@
     height: 50%;
     width: 80%;
     border-radius: 30px;
-    transition-delay: 0.5s;
+    transition-delay: 0.3s;
 }
 
 .buyButton .buy:nth-child(1)::before,

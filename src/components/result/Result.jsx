@@ -66,7 +66,7 @@ export const Result = ({data}) => {
                                 }
                         }}/> :
                         <button className="buy" onClick={() => handleAddToBasket()}>
-                            <a href={null}> انتخاب بلیط </a>
+                            <p> انتخاب بلیط </p>
                         </button>
                 }
                 <p className="cost">{tripPrice} تومان </p>

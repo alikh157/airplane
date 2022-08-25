@@ -39,17 +39,26 @@ export const MainPage = () => {
                 <SearchBar/>
             </div>
             <div className="between">
-                <div className="news" style={{backgroundImage: `url(${Hotel})`, "width": '400px', 'height': '200px'}}>
-                    <a href="">چگونه یک هتل به صرفه پیدا کنم؟</a>
-                </div>
-                <div className="news" style={{backgroundImage: `url(${second})`, "width": '400px', 'height': '200px'}}>
-                    <a href="">تور های پر مخاطب</a>
-                </div>
-                <div className="news" style={{backgroundImage: `url(${third})`, "width": '400px', 'height': '200px'}}>
-                    <a href="">بلیط های لحظه آخری</a>
-                </div>
+                <a href="https://3click.com/hotel">
+                    <div className="news"
+                         style={{backgroundImage: `url(${Hotel})`, "width": '400px', 'height': '200px'}}>
+                        چگونه یک هتل به صرفه پیدا کنم؟
+                    </div>
+                </a>
+                <a href="https://3click.com/tour">
+                    <div className="news"
+                         style={{backgroundImage: `url(${second})`, "width": '400px', 'height': '200px'}}>
+                        تور های پر مخاطب
+                    </div>
+                </a>
+                <a href="https://3click.com/flight">
+                    <div className="news"
+                         style={{backgroundImage: `url(${third})`, "width": '400px', 'height': '200px'}}>
+                        بلیط های لحظه آخری
+                    </div>
+                </a>
             </div>
-            <h5 style={{"textAlign": "center", "fontWeight":"bold", "marginBottom":"30px"}}>جدیدترین بلیط ها</h5>
+            <h5 style={{"textAlign": "center", "fontWeight": "bold", "marginBottom": "30px"}}>جدیدترین بلیط ها</h5>
             <div className="results">
                 {
                     //rendered list of tickets from an array {with help of useState}
@@ -61,7 +70,8 @@ export const MainPage = () => {
             </div>
             <div className={"suggest"}>
                 <a href="#">
-                    <img src={suggestImg} alt="banner-desktop" style={{"width":'800px' , "alignItems":"center","justifyContent":"space-between"}}/>
+                    <img src={suggestImg} alt="banner-desktop"
+                         style={{"width": '800px', "alignItems": "center", "justifyContent": "space-between"}}/>
                 </a>
                 {/*<a href="/suggestion/">*/}
                 {/*    <img src="/images/home/Mobile.png" alt="banner-mobile"/>*/}

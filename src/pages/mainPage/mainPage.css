@@ -14,9 +14,12 @@
     height: 100px;
 }
 
+.page-container .between a{
+    border-radius: 10px;
+}
 .page-container .between .news{
     padding: 10px;
-    box-shadow: 0 0 15px rgba(36, 38, 43, 0.4);
+    box-shadow: 0 0 15px rgba(87, 88, 92, 0.3);
     width: 100%;
     height: 200px;
     border-radius: 10px;
@@ -57,17 +60,18 @@
 .searchBar{
     margin-bottom: 20px;
 }
-.between .news{
+.between a{
     cursor: pointer;
     transition: all 200ms ease-in-out;
 }
-.between .news:hover{
+.between a:hover{
     border: none;
+    color: #000000;
     transition: all 200ms ease-in-out;
-    box-shadow: 0 0 20px rgba(255, 115, 20, 0.73);
+    box-shadow: 0 0 20px rgb(252, 118, 15);
     transform: translateY(-5px);
 }
-.between .news a{
+.between a{
     text-decoration: none;
     color: #000000;
     font-weight: bold;
