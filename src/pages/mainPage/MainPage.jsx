@@ -1,16 +1,16 @@
 import React, {useEffect, useState, useContext} from 'react'
 import {SearchResultContext} from "../../contexts/SearchResultContext";
+import {TicketBasketContext} from "../../contexts/TicketBasketContext";
 import './mainPage.css'
 import SearchBar from '../../components/searchBar/SearchBar';
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import {Result} from "../../components/result/Result";
-import {Login} from "../../components/login/Login";
 import * as api from "../../api";
-import second from "../../components/searchBar/images/istockphoto.jpg"
+import second from "./images/Travel-Tour.png"
 import suggestImg from "./images/Desktop.png"
-import first from "../../components/searchBar/images/air3.jpg"
-import third from "../../components/searchBar/images/airplane2.jpg"
+import Hotel from "./images/Hotel.jpg"
+import third from "./images/Book-Flights.jpg"
 
 export const MainPage = () => {
     //without context
@@ -39,14 +39,14 @@ export const MainPage = () => {
                 <SearchBar/>
             </div>
             <div className="between">
-                <div className="news" style={{backgroundImage: `url(${second})`, "width": '400px', 'height': '200px'}}>
-                    <p>چگونه یک هتل به صرفه پیدا کنم؟</p>
+                <div className="news" style={{backgroundImage: `url(${Hotel})`, "width": '400px', 'height': '200px'}}>
+                    <a href="">چگونه یک هتل به صرفه پیدا کنم؟</a>
                 </div>
-                <div className="news" style={{backgroundImage: `url(${first})`, "width": '400px', 'height': '200px'}}>
-                    <p>تور های پر مخاطب</p>
+                <div className="news" style={{backgroundImage: `url(${second})`, "width": '400px', 'height': '200px'}}>
+                    <a href="">تور های پر مخاطب</a>
                 </div>
                 <div className="news" style={{backgroundImage: `url(${third})`, "width": '400px', 'height': '200px'}}>
-                    <p>بلیط های لحطه آخری</p>
+                    <a href="">بلیط های لحظه آخری</a>
                 </div>
             </div>
             <h5 style={{"textAlign": "center", "fontWeight":"bold", "marginBottom":"30px"}}>جدیدترین بلیط ها</h5>
@@ -61,7 +61,7 @@ export const MainPage = () => {
             </div>
             <div className={"suggest"}>
                 <a href="#">
-                    <img src={suggestImg} alt="banner-desktop" style={{"width":'800px' , "align-items":"center","justify-content":"space-between"}}/>
+                    <img src={suggestImg} alt="banner-desktop" style={{"width":'800px' , "alignItems":"center","justifyContent":"space-between"}}/>
                 </a>
                 {/*<a href="/suggestion/">*/}
                 {/*    <img src="/images/home/Mobile.png" alt="banner-mobile"/>*/}

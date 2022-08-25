@@ -1,0 +1,10 @@
+.count button {
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    background-color: #e8070726;
+    box-shadow: 0 0 10px rgba(250, 5, 5, 0.2);
+    border: none;
+}

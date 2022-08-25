@@ -57,3 +57,18 @@
 .searchBar{
     margin-bottom: 20px;
 }
+.between .news{
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+}
+.between .news:hover{
+    border: none;
+    transition: all 200ms ease-in-out;
+    box-shadow: 0 0 20px rgba(255, 115, 20, 0.73);
+    transform: translateY(-5px);
+}
+.between .news a{
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+}

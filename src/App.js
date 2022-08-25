@@ -10,8 +10,11 @@ import {Login} from "./components/login/Login";
 import Footer from "./components/footer/Footer";
 import {createTheme, ThemeProvider, styled} from '@mui/material/styles';
 import {AccountContextProvider} from "./contexts/AccountContext";
+import {TicketBasketContextProvider} from "./contexts/TicketBasketContext";
+import RTL from './RTL';
 
 const baseTheme = createTheme({
+    direction: "rtl",
     palette: {
         primary: {
             main: "#ff1f71",
@@ -23,21 +26,28 @@ const baseTheme = createTheme({
 
 function App() {
     return (
-        <div className="App">
+        <RTL>
 
-            <AccountContextProvider>
-                <Routes>
-                    <Route path={"/"} element={<MainPage/>}/>
-                    <Route path={"/login"} element={<Login/>}/>
-                    <Route path={"/result"} element={<Result/>}/>
-                    <Route path={"/profile"}
-                           element={window.localStorage.getItem("accountPhoneNumber") ? <ProfilePage/> : <Login/>}/>
-                    <Route path={"/footer"} element={<Footer/>}/>
-                    <Route path={"/callus"} element={<CallUsPage/>}/>
-                    <Route path={"/about"} element={<AboutUsPage/>}/>
-                </Routes>
-            </AccountContextProvider>
-        </div>
+            <div className="App">
+                <TicketBasketContextProvider>
+                    <SearchResultContextProvider>
+                        <AccountContextProvider>
+                            <Routes>
+                                <Route path={"/"} element={<MainPage/>}/>
+                                <Route path={"/login"} element={<Login/>}/>
+                                <Route path={"/result"} element={<Result/>}/>
+                                <Route path={"/profile"}
+                                       element={window.localStorage.getItem("accountPhoneNumber") ? <ProfilePage/> :
+                                           <Login/>}/>
+                                <Route path={"/footer"} element={<Footer/>}/>
+                                <Route path={"/callus"} element={<CallUsPage/>}/>
+                                <Route path={"/about"} element={<AboutUsPage/>}/>
+                            </Routes>
+                        </AccountContextProvider>
+                    </SearchResultContextProvider>
+                </TicketBasketContextProvider>
+            </div>
+        </RTL>
     );
 }
 

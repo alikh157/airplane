@@ -39,7 +39,7 @@ const Header = () => {
                         [<Button
                             variant="text"
                             color="secondary"
-                            href="#"
+                            href="/profile"
                             size={"large"}
                             className={classes.login}
                         > {window.localStorage.getItem("accountPhoneNumber")} <FontAwesomeIcon className={'iconUser'}

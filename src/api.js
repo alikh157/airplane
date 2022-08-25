@@ -26,10 +26,11 @@ export const readAllTrips = ({onError=()=>{}, onSuccess=()=>{}}) => {
         onError(error);
     })
 }
-export const tripSearch = ({onError=()=>{}, onSuccess=()=>{}}) => {
+export const tripSearch = ({onError=()=>{}, onSuccess=()=>{}, data}) => {
     axios({
         method: 'post',
-        url: apiConstant.BASE_URL + '/trip/read/all'
+        url: apiConstant.BASE_URL + '/customer/ticket/search',
+        data:data
     }).then((res)=>{
         new Deserializer({keyForAttribute: "camelCase"}).deserialize(res.data,(error,tickets)=>{
             onSuccess(tickets);

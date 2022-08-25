@@ -1,5 +1,5 @@
 .search {
-    font-family: IRANSansX,sans-serif;
+    font-family: IRANSansX, sans-serif;
     width: 90%;
     max-width: 900px;
     text-align: center;
@@ -13,16 +13,35 @@
     margin-bottom: 20px;
 }
 
-.search form {
-    padding: 30px 15px 120px 15px;
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(20px);
-    /*padding: 30px 120px 120px 120px;*/
-    border-radius: 10px;
+.all {
+    width: 100%;
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.search form input {
+.search form {
+    padding: 30px 15px 30px 15px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    gap: 20px;
+    flex-direction: column;
+}
+
+.search-inputs {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.search-inputs input {
     flex: 1;
     border: none;
     border-radius: 10px;
@@ -33,7 +52,30 @@
     font-size: 18px;
 }
 
-.search form button {
+.radio {
+    margin-inline: 5px;
+    justify-content: space-around;
+}
+
+.radio .muirtl-ahj2mt-MuiTypography-root {
+    font-family: IRANSansX;
+}
+
+.radio .muirtl-dmmspl-MuiFormGroup-root {
+    display: flex;
+    flex-direction: row;
+}
+
+.radio .muirtl-vqmohf-MuiButtonBase-root-MuiRadio-root.Mui-checked {
+    color: #ff006c;
+}
+
+/*.search-form{*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    height: 100%;*/
+/*}*/
+.search form .searchBTN {
     background: #ff006c;
     color: #fff;
     padding: 15px 40px;
@@ -42,7 +84,8 @@
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
-.search form button:hover {
+
+.search form .searchBTN:hover {
     background: rgba(255, 12, 109, 0.76);
     transition: all 0.2s ease-in-out;
     color: #fff;
@@ -60,6 +103,7 @@
 }
 
 .category {
+    transition: all 200ms ease-in-out;
     width: 80px;
     height: 80px;
     background: rgba(225, 225, 225, 0.3);
@@ -75,11 +119,83 @@
     flex-direction: column;
 }
 
-.category img{
+.category img {
     width: 25px;
     margin-bottom: 5px;
     background-color: transparent;
 }
-.category p{
+
+.category p {
     background-color: transparent;
+}
+
+.category:hover img {
+    color: #ff7314;
+}
+
+.category:hover {
+    transition: all 200ms ease-in-out;
+    border-color: #ff7314;
+    margin-top: -10px;
+    cursor: pointer;
+}
+
+.date {
+    width: 60%;
+    transition: all 200ms ease-in-out;
+
+}
+
+.date .sc-kGXeez {
+    transition: all 200ms ease-in-out;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    /*min-width: 210px;*/
+}
+
+.date .sc-kGXeez input {
+    transition: all 200ms ease-in-out;
+
+    border: none;
+    border-radius: 10px;
+    min-height: 30px;
+    width: 70%;
+    padding-right: 10px;
+}
+
+.date .sc-kpOJdX {
+    transition: all 200ms ease-in-out;
+    direction: rtl;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /*width: 100%;*/
+}
+
+.date .sc-kpOJdX input {
+    transition: all 200ms ease-in-out;
+
+    border: none;
+    border-radius: 10px;
+    min-height: 30px;
+    width: 70%;
+    padding-right: 10px;
+    direction: rtl !important;
+}
+
+.between .news {
+    background-repeat: no-repeat;
+    background-size: 500px 400px;
+}
+.cldisZ {
+    position: absolute;
+    height: 350% !important;
+}
+.sc-gqjmRU{
+    transform: translateY(-170px);
+}
+.sc-VigVT>.sc-jTzLTM li{
+    color: #1c1c1c;
 }
