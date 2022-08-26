@@ -12,6 +12,7 @@ import {createTheme, ThemeProvider, styled} from '@mui/material/styles';
 import {AccountContextProvider} from "./contexts/AccountContext";
 import {TicketBasketContextProvider} from "./contexts/TicketBasketContext";
 import RTL from './RTL';
+import {Buy} from "./components/buy/Buy";
 
 const baseTheme = createTheme({
     direction: "rtl",
@@ -27,7 +28,6 @@ const baseTheme = createTheme({
 function App() {
     return (
         <RTL>
-
             <div className="App">
                 <TicketBasketContextProvider>
                     <SearchResultContextProvider>
@@ -42,6 +42,7 @@ function App() {
                                 <Route path={"/footer"} element={<Footer/>}/>
                                 <Route path={"/callus"} element={<CallUsPage/>}/>
                                 <Route path={"/about"} element={<AboutUsPage/>}/>
+                                <Route path={"/temp"} element={<Buy/>}/>
                             </Routes>
                         </AccountContextProvider>
                     </SearchResultContextProvider>

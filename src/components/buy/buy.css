@@ -1,0 +1,151 @@
+.buy-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.edit-box{
+    border-radius: 10px;
+    color: #ff7314;
+    background-color: #f7f7f7;
+    box-shadow:0 0  10px rgba(0, 0, 0, 0.2);
+    width: 60%;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+}
+.box1, .box2{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.box1 .information , .box2 .information{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.box1 .information input, .box2 .information input{
+    margin-right: 10px;
+    border-radius: 10px;
+    border: 1px #ff7314 solid;
+    padding: 5px 10px 5px;
+    text-shadow: #ff7314;
+    box-shadow:0 0 20px rgba(246, 146, 146, 0.52);
+}
+.box1 .information ::placeholder , .box2 .information ::placeholder{
+    font-size: 12px;
+}
+
+/*button*/
+.ticket-buy-button .buy {
+    position: relative;
+    border: none;
+    width: 140px;
+    background-color: transparent;
+    height: 40px;
+    margin: 10px 10px 10px 20px;
+}
+
+.ticket-buy-button .buy p {
+    border: none;
+    position: absolute;
+    font-weight: bold;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(14, 217, 34, 0.2);
+    box-shadow: 0 0 10px rgba(14, 217, 34, 0.2);
+    border-top: 1px solid rgba(14, 217, 34, 0.2);
+    border-bottom: 1px solid rgba(14, 217, 34, 0.2);
+    border-radius: 10px;
+    color: #f3f3f3;
+    letter-spacing: 1px;
+    z-index: 1;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.3s;
+    backdrop-filter: blur(15px);
+}
+
+.ticket-buy-button .buy p::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(21, 255, 4, 0.23), transparent);
+    transform: skewX(45deg) translateX(0);
+    transition: 0.5s;
+}
+
+.ticket-buy-button .buy:hover p::before {
+    transform: skewX(45deg) translateX(200%);
+    border: none;
+}
+
+.ticket-buy-button .buy::before {
+    content: '';
+    position: absolute;
+    border: none;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+    width: 30px;
+    height: 10px;
+    background: #d90e0e;
+    border-radius: 10px;
+    transition: 0.3s;
+    transition-delay: 0s;
+}
+
+.ticket-buy-button .buy:hover::before {
+    bottom: 0;
+    height: 50%;
+    width: 80%;
+    border-radius: 30px;
+    transition-delay: 0.3s;
+}
+.ticket-buy-button .buy::after {
+    content: '';
+    position: absolute;
+    border: none;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -5px;
+    width: 30px;
+    height: 10px;
+    background: #0ed922;
+    border-radius: 10px;
+    transition: 0.3s;
+    transition-delay: 0s;
+}
+
+.ticket-buy-button .buy:hover::after {
+    top: 0;
+    height: 50%;
+    width: 80%;
+    border-radius: 30px;
+    transition-delay: 0.3s;
+}
+
+.ticket-buy-button .buy:nth-child(1)::before,
+.ticket-buy-button .buy:nth-child(1)::after {
+    background: #24dc24;
+    box-shadow: 0 0 5px #24dc24,
+    0 0 15px #24dc24,
+    0 0 30px #24dc24,
+    0 0 60px #24dc24;
+}

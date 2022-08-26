@@ -14,10 +14,8 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import TextField from '@mui/material/TextField';
-import moment from "moment"
-// import AdapterJalali from '@date-io/date-fns-jalali';
+import moment from "moment";
 import AdapterJalaali from '@date-io/jalaali';
-// import {DatePicker} from '@mui/x-date-pickers/DatePicker';
 import {LocalizationProvider} from '@mui/x-date-pickers/LocalizationProvider';
 import {defaultDatePickerTheme, defaultRangeTheme} from "../../datePickerTheme"
 
@@ -77,8 +75,6 @@ const SearchBar = () => {
 
     return (
         <div className="search">
-            {/*<img width={"1600px"} height={"1000px"} src={air3} alt="airplane"*/}
-            {/*     className={"search-bg"}/>*/}
             <h1>پرواز خود را پیدا کنید</h1>
             <form onSubmit={SearchSubmit} className={"search-form"}>
                 <div className="search-inputs">
