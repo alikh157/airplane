@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import searchBar from './searchBar.css'
 import economy from './images/cheap.png';
 import globe from './images/globe.png';
@@ -18,10 +18,12 @@ import moment from "moment";
 import AdapterJalaali from '@date-io/jalaali';
 import {LocalizationProvider} from '@mui/x-date-pickers/LocalizationProvider';
 import {defaultDatePickerTheme, defaultRangeTheme} from "../../datePickerTheme"
+import {SearchResultContext} from "../../contexts/SearchResultContext";
 
 const SearchBar = () => {
     const [selectedValue, setSelectedValue] = useState([]);
-    const [value, setValue] = useState(new Date());
+    const {searchResult, setSearchResult} = useContext(SearchResultContext);
+
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         src: "",
@@ -36,18 +38,14 @@ const SearchBar = () => {
     };
     const SearchSubmit = (e) => {
         e.preventDefault();
-        console.log(e)
         api.tripSearch({
-            data: {
-                ...formData,
-                startDate: formData.startDate.format("YYYY/MM/DD"),
-                endDate: formData.endDate.format("YYYY/MM/DD")
-            },
+            data: {...formData},
             onError: (err) => {
                 console.log(err.message);
-            }, onSuccess: (msg) => {
+            }, onSuccess: (res) => {
+                setSearchResult(res)
                 navigate('/');
-                console.log(msg);
+                console.log(res);
             }
         })
 
@@ -62,15 +60,18 @@ const SearchBar = () => {
             const {
                 value
             } = dateData
-            setFormData({...formData, startDate: value})
+            console.log(value)
+            setFormData({...formData, startDate: value.format("jYYYY/jMM/jDD", 'fa-IR')})
         } else {
             const {
                 start, end
             } = dateData
-            setFormData({...formData, startDate: start, endDate: end})
+            setFormData({
+                ...formData,
+                startDate: start.format("jYYYY/jMM/jDD", 'fa-IR'),
+                endDate: end.format("jYYYY/jMM/jDD", 'fa-IR')
+            })
         }
-        // console.log(start.format("YYYY-MM-DD"));
-        // console.log(end.format("YYYY-MM-DD"));
     }
 
     return (
@@ -87,10 +88,8 @@ const SearchBar = () => {
                     <button className={"searchBTN"} type={"submit"}>جست و جو</button>
                 </div>
                 <div className={"all"}>
-
                     <div className={"radio"}>
                         <FormControl>
-                            {/*<FormLabel id="demo-controlled-radio-buttons-group">Gender</FormLabel>*/}
                             <RadioGroup
                                 aria-labelledby="demo-controlled-radio-buttons-group"
                                 name="controlled-radio-buttons-group"
@@ -106,7 +105,6 @@ const SearchBar = () => {
                         </FormControl>
 
                     </div>
-
                     <div className="date">
                         {
                             formData.isOneWay === "true" ?
@@ -115,7 +113,6 @@ const SearchBar = () => {
                                 :
                                 <RangeDatePicker onClickSubmitButton={dateChange} timePicker={false} toLabel="تا تاریخ"
                                                  fromLabel="از تاریخ" theme={defaultRangeTheme}/>
-
                         }
                     </div>
                 </div>

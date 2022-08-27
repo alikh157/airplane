@@ -68,7 +68,7 @@
     border: none;
     color: #000000;
     transition: all 200ms ease-in-out;
-    box-shadow: 0 0 20px rgb(252, 118, 15);
+    box-shadow: 0 0 20px rgba(255, 132, 0, 0.5  );
     transform: translateY(-5px);
 }
 .between a{

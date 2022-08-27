@@ -6,10 +6,15 @@ import Footer from "../../components/footer/Footer";
 import * as api from "../../api";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {solid} from "@fortawesome/fontawesome-svg-core/import.macro";
+import {Buy} from '../../components/buy/Buy'
+import {TicketBasketContext} from "../../contexts/TicketBasketContext";
+import {Trip} from '../../components/trip/Trip'
 
 export const ProfilePage = () => {
     const {myAccount, setMyAccount} = useContext(AccountContext);
-
+    const {ticketBasket, setTicketBasket} = useContext(TicketBasketContext);
+    console.log(ticketBasket)
+    // const {0:ticket}={...ticketBasket}
     const submitEditHandler = (e) => {
         e.preventDefault();
         api.updateAccount(myAccount, {
@@ -51,9 +56,6 @@ export const ProfilePage = () => {
                                     color: "#acacac",
                                     fontSize: "1.1rem"
                                 }}/>
-                                {
-                                    console.log(myAccount)
-                                }
                                 <input type="text" placeholder={"شماره همراه خود را وارد کنيد"}
                                        onChange={e => setMyAccount({...myAccount, accountPhoneNumber: e.target.value})}
                                        value={myAccount.accountPhoneNumber}/>
@@ -87,6 +89,12 @@ export const ProfilePage = () => {
                         <input type="submit" className="editBtn" value={"ذخیره"}/>
                     </form>
                 </div>
+
+            </div>
+            <div className="customers">
+                {
+                    ticketBasket.map((ticketType, index) => <Trip trip={ticketType}/>)
+                }
             </div>
             <Footer/>
         </div>

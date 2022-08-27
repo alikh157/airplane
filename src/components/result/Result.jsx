@@ -8,6 +8,8 @@ import Asset from "./images/SVG/Asset.svg";
 import airplane_landing from "./images/airplane_landing_red.png";
 import airplane_take_off from "./images/airplane_take_off_red.png";
 import {TicketBasketContext} from "../../contexts/TicketBasketContext";
+import {SearchResultContext} from "../../contexts/SearchResultContext";
+import {AccountContext} from "../../contexts/AccountContext";
 import Counter from "../counter/Counter";
 
 const Item = styled(Box)(({theme}) => ({

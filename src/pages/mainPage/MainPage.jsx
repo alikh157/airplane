@@ -11,7 +11,6 @@ import second from "./images/Travel-Tour.png"
 import suggestImg from "./images/Desktop.png"
 import Hotel from "./images/Hotel.jpg"
 import third from "./images/Book-Flights.jpg"
-
 export const MainPage = () => {
     //without context
     // const [searchResult, setSearchResult] = useState([]);
@@ -26,7 +25,7 @@ export const MainPage = () => {
                 console.log(error);
             }, onSuccess: (tickets) => {
                 //here we can define what we wanna do with tickets
-                console.log(tickets);
+                // console.log(tickets);
                 setSearchResult(tickets);
             }
         })
@@ -73,9 +72,6 @@ export const MainPage = () => {
                     <img src={suggestImg} alt="banner-desktop"
                          style={{"width": '800px', "alignItems": "center", "justifyContent": "space-between"}}/>
                 </a>
-                {/*<a href="/suggestion/">*/}
-                {/*    <img src="/images/home/Mobile.png" alt="banner-mobile"/>*/}
-                {/*</a>*/}
             </div>
             <Footer/>
         </div>

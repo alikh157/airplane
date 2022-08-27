@@ -86,7 +86,7 @@
 }
 
 .search form .searchBTN:hover {
-    background: rgba(255, 12, 109, 0.76);
+    background: rgba(253, 73, 166, 0.77);
     transition: all 0.2s ease-in-out;
     color: #fff;
     padding: 15px 40px;

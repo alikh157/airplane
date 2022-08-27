@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import header from './header.css';
 import logo from './images/airport_500px.png';
 import Button from '@mui/material/Button';
@@ -6,11 +6,12 @@ import ticketImage from './images/boarding_pass_60px.png';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {solid, regular, brands} from '@fortawesome/fontawesome-svg-core/import.macro';
 import {makeStyles} from "@mui/styles";
+import Badge from '@mui/material/Badge';
+import {TicketBasketContext} from "../../contexts/TicketBasketContext";
+import {useNavigate} from "react-router-dom";
 
 const useStyles = makeStyles({
     login: {
-        marginTop: '5px',
-        marginLeft: '5px',
         '&.MuiButton-textSecondary': {
             borderRadius: '10px',
             color: '#6c6464',
@@ -19,6 +20,10 @@ const useStyles = makeStyles({
     },
 });
 const Header = () => {
+    const {ticketBasket, setTicketBasket} = useContext(TicketBasketContext);
+    const {0: ticket} = {...ticketBasket}
+    const navigate = useNavigate();
+
     const classes = useStyles();
     return (
         <header>
@@ -34,16 +39,22 @@ const Header = () => {
                 </ul>
             </nav>
             <div className="login">
+
                 {
                     window.localStorage.getItem("accountPhoneNumber") ?
-                        [<Button
-                            variant="text"
-                            color="secondary"
-                            href="/profile"
-                            size={"large"}
-                            className={classes.login}
-                        > {window.localStorage.getItem("accountPhoneNumber")} <FontAwesomeIcon className={'iconUser'}
-                                                                                               icon={solid('user')}/></Button>,
+                        [
+                            <Badge badgeContent={ticket ? ticket.amount : 0} color="error">
+                                <Button
+                                    variant="text"
+                                    color="secondary"
+                                    size={"large"}
+                                    className={classes.login}
+                                    onClick={() => navigate('/profile')}
+                                > {window.localStorage.getItem("accountPhoneNumber")} <FontAwesomeIcon
+                                    className={'iconUser'}
+                                    icon={solid('user')}/></Button>
+                            </Badge>
+                            ,
                             <Button
                                 variant="text"
                                 color="secondary"

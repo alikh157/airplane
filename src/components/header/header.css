@@ -44,7 +44,7 @@ header .logo {
     transition: all 0.3s ease 0s;
     text-decoration: none;
     color: #6c6464;
-    padding: 5px 0;
+
     position: relative;
 }
 
@@ -63,12 +63,14 @@ header .logo {
     width: 100%;
 }
 /*button convert to a tag while rendering*/
-.login a {
+.login a,.login button {
     padding: 9px 25px;
     border-radius: 10px;
     justify-content: center;
     align-items: center;
-    margin-left: 20px;
+    margin-right: 20px;
+    background-color: rgba(248, 19, 79, 0.09);
+    box-shadow:0 0 7px rgba(33, 33, 33, 0.3);
     cursor: pointer;
     transition: all 0.3s ease 0s;
     white-space: nowrap;
@@ -90,17 +92,18 @@ header .logo {
     transition: 0.2s;
 }
 
-.login a:hover {
+.login a:hover,.login button:hover {
     color:#ff7314;
     border: 2px solid #ff7314ff;
+    box-shadow:none;
     transition:all 300ms ease-in-out;
 }
-.login a:hover .iconLogin {
+.login Link>button:hover .iconLogin {
     padding-left: 20px;
     opacity: 1;
 }
 
-.login a:hover.iconUser:after {
+.login button:hover.iconUser:after {
     opacity: 1;
     left: 0;
 }
@@ -112,20 +115,23 @@ header .logo {
     transition: 0.2s;
 }
 
-.login a:hover {
+.login button:hover {
     color:#ff7314;
     border: 2px solid #ff7314ff;
     transition:all 300ms ease-in-out;
 }
-.login a:hover .iconUser {
+.login button:hover .iconUser {
     padding-right: 20px;
     opacity: 1;
 }
 
-.login a:hover.iconUser:after {
+.login button:hover.iconUser:after {
     opacity: 1;
     left: 0;
 }
 .iconExit{
     margin-right: 10px;
+}
+.MuiButtonBase-root,.MuiBadge-root{
+    direction: rtl;
 }
