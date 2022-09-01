@@ -1,10 +1,16 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import './buy.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {regular, solid} from "@fortawesome/fontawesome-svg-core/import.macro";
+import {v4 as uuidv4} from 'uuid';
+import {TicketBasketContext} from "../../contexts/TicketBasketContext";
 
-export const Buy = ({onChange}) => {
-    const [buyForm, setBuyForm] = useState({
+export const Buy = ({defaultFormValue, tripId}) => {
+    // const {finalTrip, setFinalTrip} = useContext(BuyFormContext);
+    const {ticketBasket, setTicketBasket} = React.useContext(TicketBasketContext);
+    // console.log(defaultFormValue)
+    const [buyForm, setBuyForm] = useState(defaultFormValue ? defaultFormValue : {
+        formId: uuidv4(),
         age: "",
         birthCertificate: "",
         nationalCode: "",
@@ -14,10 +20,28 @@ export const Buy = ({onChange}) => {
         namePersian: "",
         familyNamePersian: ""
     })
-    useEffect(()=>{
-        // console.log(buyForm)
-        onChange(buyForm)
-    },[buyForm])
+    const otherTrips = ticketBasket.filter(basketObj => basketObj.tripId !== tripId)
+    const TripIndex = ticketBasket.findIndex(basketObj => basketObj.tripId === tripId)
+    useEffect(() => {
+        let basketTripData = ticketBasket.find(basketObj => basketObj.tripId === tripId)
+        let newBasketTripDataFormData = {
+            ...basketTripData.formsData,
+            [buyForm.formId]: buyForm
+        }
+        let newTicketBasket = ticketBasket
+        newTicketBasket[TripIndex] = {
+            ...basketTripData,
+            formsData: newBasketTripDataFormData
+        }
+        setTicketBasket([
+            ...newTicketBasket
+        ])
+
+
+    }, [buyForm]);
+    // useEffect(() => {
+    //     console.log(finalTrip)
+    // }, [finalTrip]);
     return (
         <div className="buy-container">
             <div className="edit-box">
@@ -34,6 +58,7 @@ export const Buy = ({onChange}) => {
                                    ...buyForm,
                                    age: e.target.value
                                })}
+                               value={buyForm.age} required
                         />
                     </div>
                     <div className="information">
@@ -48,6 +73,7 @@ export const Buy = ({onChange}) => {
                                    ...buyForm,
                                    birthCertificate: e.target.value
                                })}
+                               value={buyForm.birthCertificate} required
                         />
                     </div>
                     <div className="information">
@@ -62,6 +88,8 @@ export const Buy = ({onChange}) => {
                                    ...buyForm,
                                    nationalCode: e.target.value
                                })}
+                               value={buyForm.nationalCode} required
+
                         />
                     </div>
                     <div className="information">
@@ -76,6 +104,8 @@ export const Buy = ({onChange}) => {
                                    ...buyForm,
                                    familyNameEnglish: e.target.value
                                })}
+                               value={buyForm.familyNameEnglish} required
+
                         />
                     </div>
                 </div>
@@ -92,6 +122,8 @@ export const Buy = ({onChange}) => {
                                    ...buyForm,
                                    nameEnglish: e.target.value
                                })}
+                               value={buyForm.nameEnglish} required
+
                         />
                     </div>
                     <div className="information">
@@ -106,6 +138,8 @@ export const Buy = ({onChange}) => {
                                    ...buyForm,
                                    email: e.target.value
                                })}
+                               value={buyForm.email} required
+
                         />
                     </div>
                     <div className="information">
@@ -120,6 +154,8 @@ export const Buy = ({onChange}) => {
                                    ...buyForm,
                                    namePersian: e.target.value
                                })}
+                               value={buyForm.namePersian} required
+
                         />
                     </div>
                     <div className="information">
@@ -134,16 +170,11 @@ export const Buy = ({onChange}) => {
                                    ...buyForm,
                                    familyNamePersian: e.target.value
                                })}
+                               value={buyForm.familyNamePersian} required
                         />
                     </div>
                 </div>
             </div>
-            <div className={"ticket-buy-button"}>
-                <button className="buy">
-                    <p>ثبت اطلاعات</p>
-                </button>
-            </div>
-
         </div>
     )
 }

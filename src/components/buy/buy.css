@@ -11,7 +11,6 @@
     color: #ff7314;
     background-color: #f7f7f7;
     box-shadow:0 0  10px rgba(0, 0, 0, 0.2);
-    width: 60%;
     height: 400px;
     display: flex;
     flex-direction: row;
@@ -105,7 +104,7 @@
     bottom: -5px;
     width: 30px;
     height: 10px;
-    background: #d90e0e;
+    background: #0ed922;
     border-radius: 10px;
     transition: 0.3s;
     transition-delay: 0s;

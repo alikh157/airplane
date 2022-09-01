@@ -12,11 +12,10 @@
     border-radius: 15px;
     border-style: none;
     box-shadow: 0 0 5px rgba(28, 28, 28, 0.7);
-    /*font-family: IranSanes;*/
 
 }
 .body {
-    font-family: B-Nazanin;
+    font-family: IRANSansX;
 }
 .factory p{
     font-size:12px;

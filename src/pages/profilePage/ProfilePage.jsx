@@ -13,8 +13,14 @@ import {Trip} from '../../components/trip/Trip'
 export const ProfilePage = () => {
     const {myAccount, setMyAccount} = useContext(AccountContext);
     const {ticketBasket, setTicketBasket} = useContext(TicketBasketContext);
-    console.log(ticketBasket)
-    // const {0:ticket}={...ticketBasket}
+    const {customerBasket, setCustomerBasket} = useState({});
+
+    let finalPrice = 0;
+
+    // for (let i = 0; i < ticketBasket.length; i++) {
+    //     finalPrice += ticketBasket[i].trip.tripPrice * ticketBasket[i].amount;
+    // }
+
     const submitEditHandler = (e) => {
         e.preventDefault();
         api.updateAccount(myAccount, {
@@ -25,13 +31,17 @@ export const ProfilePage = () => {
             }
         })
     }
-
+    const buyHandler = (e) => {
+        e.preventDefault();
+        console.log("buyHandler")
+        // api.ticketBuy(customerBasket,{})
+    }
     useEffect(() => {
+        // console.log(ticketBasket)
         api.readAccount({
             onError: (error) => {
                 console.log(error);
             }, onSuccess: (accountInfo) => {
-                // console.log(accountInfo);
                 const {
                     accountPhoneNumber = '',
                     accountEmail = '',
@@ -40,6 +50,7 @@ export const ProfilePage = () => {
                 setMyAccount(accountInfo);
             }
         })
+
     }, []);
     return (
         <div className="profile-container">
@@ -92,8 +103,26 @@ export const ProfilePage = () => {
 
             </div>
             <div className="customers">
+                <h3>لطفا اطلاعات هر مسافر را با دقت وارد کنيد</h3>
                 {
-                    ticketBasket.map((ticketType, index) => <Trip trip={ticketType}/>)
+                    ticketBasket.map((basketObj, index) => <>
+                        <p style={{marginTop:"20px"}}> بلیط سفر <b>{basketObj.trip?.tripSrc ?? ""}</b> به <b>{basketObj.trip?.tripDst ?? ""}</b></p>
+                        <Trip basketObj={basketObj}/>
+                        </>
+                    )
+                }
+                {
+                    ticketBasket.length > 0
+                    && <div className={"buy-button"}>
+                        <p>هزينه کل:
+                            {finalPrice}
+                            &nbsp;
+                            تومان
+                        </p>
+                        <button className="buy" onClick={buyHandler}>
+                            <p>ثبت اطلاعات</p>
+                        </button>
+                    </div>
                 }
             </div>
             <Footer/>

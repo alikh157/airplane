@@ -25,7 +25,7 @@ function change() {
 
 export const Login = () => {
     const [account, setAccount] = useState([]);
-    const navigate= useNavigate();
+    const navigate = useNavigate();
     const submitLoginHandler = (e) => {
         e.preventDefault();
         delete account.accountEmail;
@@ -70,7 +70,7 @@ export const Login = () => {
                             }}/>
                             <input type="text" placeholder={"شماره همراه خود را وارد کنيد"}
                                    onChange={e => setAccount({...account, accountPhoneNumber: e.target.value})}
-                                   value={account.accountPhoneNumber}/>
+                                   value={account.accountPhoneNumber} required/>
                         </div>
                         <div className="input-field">
                             <FontAwesomeIcon icon={solid('lock')} style={{
@@ -83,14 +83,14 @@ export const Login = () => {
                                    onChange={e => setAccount({...account, accountPlainPassword: e.target.value})}
                                    value={account.accountPlainPassword}/>
                         </div>
-                        <input type="submit" className="loginBtn" value={"ورود"}/>
+                        <input type="submit" className="loginBtn" value={"ورود"} required/>
                     </form>
                     <form onSubmit={submitRegisterHandler} className="sign-up-form">
                         <h2 className="title">
                             ثبت نام
                         </h2>
                         <div className="input-field">
-                            <FontAwesomeIcon icon={solid('user')} style={{
+                            <FontAwesomeIcon icon={solid('mobile')} style={{
                                 textAlign: "center",
                                 lineHeight: "55px",
                                 color: "#acacac",
@@ -98,7 +98,7 @@ export const Login = () => {
                             }}/>
                             <input type="text" placeholder={"شماره همراه خود را وارد کنيد"}
                                    onChange={e => setAccount({...account, accountPhoneNumber: e.target.value})}
-                                   value={account.accountPhoneNumber}/>
+                                   value={account.accountPhoneNumber} required/>
                         </div>
                         <div className="input-field">
                             <FontAwesomeIcon icon={solid('envelope')} style={{
@@ -109,7 +109,7 @@ export const Login = () => {
                             }}/>
                             <input type="text" placeholder={"Email"}
                                    onChange={e => setAccount({...account, accountEmail: e.target.value})}
-                                   value={account.accountEmail}/>
+                                   value={account.accountEmail} required/>
                         </div>
                         <div className="input-field">
                             <FontAwesomeIcon icon={solid('lock')} style={{
@@ -120,7 +120,7 @@ export const Login = () => {
                             }}/>
                             <input type="password" placeholder={"رمزعبور"}
                                    onChange={e => setAccount({...account, accountPlainPassword: e.target.value})}
-                                   value={account.accountPlainPassword}/>
+                                   value={account.accountPlainPassword} required/>
                         </div>
                         <input type="submit" className="loginBtn" value={"ثبت نام"}/>
                     </form>

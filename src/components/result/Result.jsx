@@ -24,10 +24,13 @@ const Item = styled(Box)(({theme}) => ({
 
 //we select 'data' from props that have key and data
 export const Result = ({data}) => {
-    const {ticketBasket, setTicketBasket} = React.useContext(TicketBasketContext);
+        const {ticketBasket, setTicketBasket} = React.useContext(TicketBasketContext);
+    const handleAddToBasket = (e) => {
+        setTicketBasket([...ticketBasket, {trip: data, amount: 1, tripId: tripId, formsData:null}]);
+    }
     //for debug
-    useEffect(function () {
-    }, [ticketBasket])
+    // useEffect(function () {
+    // }, [ticketBasket])
     const {
         tripAirplaneObject: {
             tripAirplaneId = '',
@@ -49,25 +52,23 @@ export const Result = ({data}) => {
         tripInternalOrExternal = '',
         tripBusinessOrEconomy = '',
     } = data;
-    const handleAddToBasket = (e) => {
-        setTicketBasket([...ticketBasket, {trip: data, amount: 1, tripId: tripId}]);
-    }
+
     return (
         <Stack className="result" direction="row" spacing={2}>
             <Item className="buyButton">
                 {
-                    ticketBasket.filter(trip => trip.tripId === tripId && trip.amount > 0).length > 0 ?
+                    ticketBasket.filter(basketObj => basketObj.tripId === tripId && basketObj.amount > 0).length > 0 ?
                         <Counter
-                            value={ticketBasket.filter(trip=>trip.tripId === tripId)[0].amount}
+                            value={ticketBasket.filter(basketObj=>basketObj.tripId === tripId)[0].amount}
                             onUpdate={(newValue) => {
                                 if(newValue == 0){
-                                    setTicketBasket([...ticketBasket.filter(trip=>trip.tripId != tripId)])
+                                    setTicketBasket([...ticketBasket.filter(basketObj=>basketObj.tripId != tripId)])
                                 }
                                 else{
-                                    setTicketBasket([...ticketBasket.filter(trip=>trip.tripId != tripId), {trip: data, amount: newValue, tripId: tripId}])
+                                    setTicketBasket([...ticketBasket.filter(basketObj=>basketObj.tripId != tripId), {trip: data, amount: newValue, tripId: tripId ,formsData:null}])
                                 }
                         }}/> :
-                        <button className="buy" onClick={() => handleAddToBasket()}>
+                        <button className="buy" onClick={handleAddToBasket}>
                             <p> انتخاب بلیط </p>
                         </button>
                 }
@@ -88,7 +89,6 @@ export const Result = ({data}) => {
                 </div>
                 <div className="travelImage">
                     <img src={Asset} style={{height: "auto", width: '190px'}} alt="travel image"/>
-                    {/*<p className="time" style={{marginTop:'5px'}}>{tripDate}</p>*/}
                 </div>
                 <div className="dst">
                     <h6 className="city">{tripDst}</h6>

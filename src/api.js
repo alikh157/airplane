@@ -39,6 +39,20 @@ export const tripSearch = ({onError=()=>{}, onSuccess=()=>{}, data}) => {
         onError(error);
     })
 }
+export const ticketBuy = ({onError=()=>{}, onSuccess=()=>{}, data}) => {
+    axios({
+        method: 'post',
+        url: apiConstant.BASE_URL + '/customer/ticket/buy',
+        data:data
+    }).then((res)=>{
+
+        // new Deserializer({keyForAttribute: "camelCase"}).deserialize(res.data,(error,tickets)=>{
+        //     onSuccess(tickets);
+        // });
+    }).catch((error)=>{
+        onError(error);
+    })
+}
 export const loginAccount = (account,{onError=()=>{}, onSuccess=()=>{}}) => {
     axios({
         method: 'post',

@@ -25,7 +25,6 @@ export const MainPage = () => {
                 console.log(error);
             }, onSuccess: (tickets) => {
                 //here we can define what we wanna do with tickets
-                // console.log(tickets);
                 setSearchResult(tickets);
             }
         })
