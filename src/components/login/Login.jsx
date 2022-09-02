@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 
 import './login.css';
-// import '../../temp.js';
 import {regular, solid} from "@fortawesome/fontawesome-svg-core/import.macro";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import signupImage from './images/undraw_aircraft_re_m05i.svg';
@@ -39,7 +38,6 @@ export const Login = () => {
                 console.log(msg);
             }
         })
-        // console.log(e)
     }
     const submitRegisterHandler = (e) => {
         e.preventDefault();
@@ -51,7 +49,6 @@ export const Login = () => {
                 navigate('/login');
             }
         })
-        // console.log(e)
     }
     return (
         <div className="container">

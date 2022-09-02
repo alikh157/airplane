@@ -11,6 +11,7 @@ import second from "./images/Travel-Tour.png"
 import suggestImg from "./images/Desktop.png"
 import Hotel from "./images/Hotel.jpg"
 import third from "./images/Book-Flights.jpg"
+
 export const MainPage = () => {
     //without context
     // const [searchResult, setSearchResult] = useState([]);
@@ -58,10 +59,25 @@ export const MainPage = () => {
             </div>
             <h5 style={{"textAlign": "center", "fontWeight": "bold", "marginBottom": "30px"}}>جدیدترین بلیط ها</h5>
             <div className="results">
+                <p style={{marginTop: "20px", marginBottom: "0"}}>بلیط رفت</p>
                 {
                     //rendered list of tickets from an array {with help of useState}
                     //we set index as a key for React
-                    searchResult.map((res, index) => {
+
+                    searchResult.goTrips?.map((res, index) => {
+                        return <Result key={index} data={res}/>
+                    })
+                }
+            </div>
+            <div className="results">
+                {
+                    searchResult.comeBackTrips &&
+                        <p style={{marginTop: "20px", marginBottom: "0"}}>بلیط برگشت</p>
+                }
+                {
+                    //rendered list of tickets from an array {with help of useState}
+                    //we set index as a key for React
+                    searchResult.comeBackTrips?.map((res, index) => {
                         return <Result key={index} data={res}/>
                     })
                 }

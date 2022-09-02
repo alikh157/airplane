@@ -64,7 +64,7 @@ header .logo {
 }
 /*button convert to a tag while rendering*/
 .login a,.login button {
-    padding: 9px 25px;
+    padding: 9px 20px;
     border-radius: 10px;
     justify-content: center;
     align-items: center;
@@ -88,6 +88,7 @@ header .logo {
 .login .iconLogin {
     cursor: pointer;
     position: relative;
+    margin-right: -10px;
     opacity: 0;
     transition: 0.2s;
 }
@@ -98,7 +99,7 @@ header .logo {
     box-shadow:none;
     transition:all 300ms ease-in-out;
 }
-.login Link>button:hover .iconLogin {
+.login a:hover .iconLogin {
     padding-left: 20px;
     opacity: 1;
 }
@@ -111,6 +112,8 @@ header .logo {
 .login .iconUser {
     cursor: pointer;
     position: relative;
+    left: -5px;
+    margin-right: -10px;
     opacity: 0;
     transition: 0.2s;
 }

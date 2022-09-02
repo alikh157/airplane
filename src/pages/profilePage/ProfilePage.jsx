@@ -1,4 +1,5 @@
 import React, {useEffect, useState, useContext} from 'react'
+import {useNavigate} from 'react-router-dom';
 import {AccountContext} from "../../contexts/AccountContext";
 import './pageProfile.css'
 import Header from "../../components/header/Header";
@@ -11,6 +12,8 @@ import {TicketBasketContext} from "../../contexts/TicketBasketContext";
 import {Trip} from '../../components/trip/Trip'
 
 export const ProfilePage = () => {
+    const navigate = useNavigate();
+
     const {myAccount, setMyAccount} = useContext(AccountContext);
     const {ticketBasket, setTicketBasket} = useContext(TicketBasketContext);
     const {customerBasket, setCustomerBasket} = useState({});
@@ -26,8 +29,13 @@ export const ProfilePage = () => {
         api.updateAccount(myAccount, {
             onError: (err) => {
                 console.log(err.message);
-            }, onSuccess: (msg) => {
-                console.log(msg);
+            }, onSuccess: (account, status) => {
+                console.log(status)
+                if (status === 200) {
+                    window.localStorage.removeItem('accountPhoneNumber');
+                    window.localStorage.setItem('accountPhoneNumber', account.accountPhoneNumber);
+                    window.location.reload()
+                }
             }
         })
     }
@@ -37,7 +45,6 @@ export const ProfilePage = () => {
         // api.ticketBuy(customerBasket,{})
     }
     useEffect(() => {
-        // console.log(ticketBasket)
         api.readAccount({
             onError: (error) => {
                 console.log(error);
@@ -103,11 +110,15 @@ export const ProfilePage = () => {
 
             </div>
             <div className="customers">
-                <h3>لطفا اطلاعات هر مسافر را با دقت وارد کنيد</h3>
+                {
+                    ticketBasket.length > 0 && <h3>لطفا اطلاعات هر مسافر را برای هر سفر با دقت وارد کنيد</h3>
+
+                }
                 {
                     ticketBasket.map((basketObj, index) => <>
-                        <p style={{marginTop:"20px"}}> بلیط سفر <b>{basketObj.trip?.tripSrc ?? ""}</b> به <b>{basketObj.trip?.tripDst ?? ""}</b></p>
-                        <Trip basketObj={basketObj}/>
+                            <p style={{marginTop: "20px"}}> بلیط
+                                سفر <b>{basketObj.trip?.tripSrc ?? ""}</b> به <b>{basketObj.trip?.tripDst ?? ""}</b></p>
+                            <Trip basketObj={basketObj}/>
                         </>
                     )
                 }

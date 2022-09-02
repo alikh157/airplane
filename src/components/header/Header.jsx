@@ -48,9 +48,8 @@ const Header = () => {
                                     variant="text"
                                     color="secondary"
                                     size={"large"}
-                                    // href={"/profile"}
+                                    href={"/profile"}
                                     className={classes.login}
-                                    onClick={() => navigate('/profile')}
                                 > {window.localStorage.getItem("accountPhoneNumber")} <FontAwesomeIcon
                                     className={'iconUser'}
                                     icon={solid('user')}/></Button>

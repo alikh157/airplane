@@ -1,10 +1,9 @@
 import React, {useContext, useEffect, useState} from 'react';
-import searchBar from './searchBar.css'
+import './searchBar.css'
 import economy from './images/cheap.png';
 import globe from './images/globe.png';
 import business from './images/business.png'
 import internal from './images/internal.png';
-import air3 from './images/air3.jpg';
 import * as api from "../../api";
 import Radio from '@mui/material/Radio';
 import {useNavigate} from 'react-router-dom';
@@ -12,8 +11,6 @@ import {DatePicker, RangeDatePicker} from "jalali-react-datepicker"
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
-import TextField from '@mui/material/TextField';
 import moment from "moment";
 import AdapterJalaali from '@date-io/jalaali';
 import {LocalizationProvider} from '@mui/x-date-pickers/LocalizationProvider';
@@ -31,6 +28,8 @@ const SearchBar = () => {
         isOneWay: "true",
         startDate: "",
         endDate: "",
+        BusinessOrEconomy: '',
+        InternalOrExternal: ''
     })
 
     const handleChange = (event) => {
@@ -45,13 +44,12 @@ const SearchBar = () => {
             }, onSuccess: (res) => {
                 setSearchResult(res)
                 navigate('/');
-                console.log(res);
             }
         })
 
     }
     useEffect(() => {
-        console.log(formData)
+        console.log("formData", formData)
     }, [formData])
 
     function dateChange(dateData) {
@@ -60,7 +58,6 @@ const SearchBar = () => {
             const {
                 value
             } = dateData
-            console.log(value)
             setFormData({...formData, startDate: value.format("jYYYY/jMM/jDD", 'fa-IR')})
         } else {
             const {
@@ -118,19 +115,27 @@ const SearchBar = () => {
                 </div>
             </form>
             <div className="category-list">
-                <div className="category">
+                <div className="category" onClick={e => {
+                    setFormData({...formData, BusinessOrEconomy: 'Business'})
+                }}>
                     <img src={business} alt="business"/>
                     <p>پرواز بیزینس</p>
                 </div>
-                <div className="category">
+                <div className="category" onClick={e => {
+                    setFormData({...formData, BusinessOrEconomy: 'Economy'})
+                }}>
                     <img src={economy} alt="economy"/>
                     <p>پرواز اقتصادی</p>
                 </div>
-                <div className="category">
+                <div className="category" onClick={e => {
+                    setFormData({...formData, InternalOrExternal: 'Internal'})
+                }}>
                     <img src={internal} alt="internal"/>
                     <p>پرواز داخلی</p>
                 </div>
-                <div className="category">
+                <div className="category" onClick={e => {
+                    setFormData({...formData, InternalOrExternal: 'External'})
+                }}>
                     <img src={globe} alt="international"/>
                     <p>پرواز خارجی</p>
                 </div>
