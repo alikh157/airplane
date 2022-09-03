@@ -1,10 +1,12 @@
 
-.result{
+.result {
+    transition: all 1s ease-in-out;
     direction: ltr;
+    position: relative;
     justify-content: space-between;
     padding: 5px;
     align-items: center;
-    backdrop-filter:blur(20px);
+    backdrop-filter: blur(20px);
     height: 120px;
     width: 85%;
     color: black;
@@ -14,13 +16,16 @@
     box-shadow: 0 0 5px rgba(28, 28, 28, 0.7);
 
 }
+
 .body {
     font-family: IRANSansX;
 }
-.factory p{
-    font-size:12px;
+
+.factory p {
+    font-size: 12px;
     font-weight: bold;
 }
+
 .result .cost {
     color: green;
     font-weight: bold;
@@ -110,6 +115,7 @@
     border-radius: 30px;
     transition-delay: 0.3s;
 }
+
 .buyButton .buy::after {
     content: '';
     position: absolute;
@@ -147,4 +153,97 @@
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 987px) {
+    .result{
+        transition: all 0.8s ease-in-out;
+        width:100%;
+    }
+    .muirtl-1xybaxe{
+        transition: all 0.5s ease-in-out;
+        gap: 80px!important;
+    }
+}
+@media screen and (max-width: 985px) and (min-width: 520px){
+    .result{
+        transition: all 0.8s ease-in-out;
+        flex-direction: column-reverse !important;
+        justify-content: space-around;
+        align-items: center;
+        height: 530px;
+        width: 60%;
+    }
+    .MuiBox-root{
+        transition: all 0.5s ease-in-out;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+    .dst,.src{
+        display: flex;
+        flex-direction: row !important;
+        justify-content: space-around;
+        align-items: center;
+        width: 30%;
+        margin-bottom: 20px;
+    }
+    .dst p,.src p ,.dst h6,.src h6 , .flight{
+        margin: 0;
+    }
+    .flight{
+        display: flex;
+        flex-direction: row !important;
+        justify-content: space-around !important;
+        align-items: center;
+        width: 30%;
+    }
+    .buyButton{
+        display: flex;
+        align-items: center;
+        flex-direction: row !important;
+    }
+    .buyButton p{
+        margin: 0;
+    }
+}
+@media screen and (max-width: 520px){
+    .result{
+        transition: all 0.8s ease-in-out;
+        flex-direction: column-reverse !important;
+        justify-content: space-around;
+        align-items: center;
+        height: 630px;
+        width: 70%;
+    }
+    .MuiBox-root{
+        transition: all 0.5s ease-in-out;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+    .dst,.src{
+        display: flex;
+        flex-direction: row !important;
+        justify-content: space-around;
+        align-items: center;
+        width: 30%;
+        margin-bottom: 20px;
+    }
+    .dst p,.src p ,.dst h6,.src h6 , .flight{
+        margin: 0;
+    }
+    .flight{
+        display: flex;
+        flex-direction: row !important;
+        justify-content: space-around !important;
+        align-items: center;
+        width: 30%;
+    }
+    .buyButton{
+        display: flex;
+        align-items: center;
+        flex-direction: column !important;
+    }
+    .buyButton p{
+        margin: 0;
+    }
 }

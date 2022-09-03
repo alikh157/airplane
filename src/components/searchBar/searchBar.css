@@ -1,4 +1,5 @@
 .search {
+    transition: all 0.8s ease-in-out;
     font-family: IRANSansX, sans-serif;
     width: 90%;
     max-width: 900px;
@@ -14,6 +15,7 @@
 }
 
 .all {
+    transition: all 0.8s ease-in-out;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -29,12 +31,12 @@
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
-
     gap: 20px;
     flex-direction: column;
 }
 
 .search-inputs {
+    transition: all 0.5s ease-in-out;
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -70,11 +72,6 @@
     color: #ff006c;
 }
 
-/*.search-form{*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    height: 100%;*/
-/*}*/
 .search form .searchBTN {
     background: #ff006c;
     color: #fff;
@@ -129,10 +126,6 @@
     background-color: transparent;
 }
 
-.category:hover img {
-    color: #ff7314;
-}
-
 .category:hover {
     transition: all 200ms ease-in-out;
     border-color: #ff7314;
@@ -140,8 +133,36 @@
     cursor: pointer;
 }
 
+.categoryActive {
+    border-color: #ff7314;
+    border-width: 2px;
+    border-radius: 10px;
+    justify-content: center;
+    flex-direction: column;
+    transition: all 200ms ease-in-out;
+    width: 80px;
+    height: 80px;
+    background: rgba(225, 225, 225, 0.3);
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    border-style: solid;
+    margin: -10px 10px 0 10px;
+    cursor: pointer;
+}
+
+.categoryActive img {
+    width: 25px;
+    margin-bottom: 5px;
+    background-color: transparent;
+}
+
+.categoryActive p {
+    background-color: transparent;
+}
+
 .date {
-    width: 60%;
+    width: 70%;
     transition: all 200ms ease-in-out;
 
 }
@@ -189,13 +210,46 @@
     background-repeat: no-repeat;
     background-size: 500px 400px;
 }
+
 .cldisZ {
     position: absolute;
     height: 350% !important;
 }
-.sc-gqjmRU{
+
+.sc-gqjmRU {
     transform: translateY(-170px);
 }
-.sc-VigVT>.sc-jTzLTM li{
+
+.sc-VigVT > .sc-jTzLTM li {
     color: #1c1c1c;
+}
+
+@media screen and (max-width: 735px) {
+    .search-inputs {
+        transition: all 0.8s ease-in-out;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .search-inputs input {
+        transition: all 0.8s ease-in-out;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+
+    .all {
+        transition: all 0.8s ease-in-out;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .date {
+        width: 60%;
+    }
+
+    .cldisZ {
+        top: -225px !important;
+    }
 }

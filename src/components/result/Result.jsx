@@ -76,6 +76,7 @@ export const Result = ({data}) => {
             </Item>
             <Item sx={{
                 display: "flex",
+                position:"relative",
                 flexDirection: "row",
                 width: "100%",
                 justifyContent: "center",
@@ -103,6 +104,7 @@ export const Result = ({data}) => {
             <Item sx={{
                 display: "flex",
                 flexDirection: "row",
+                position:"relative",
                 width: "50%",
                 justifyContent: "center",
                 alignItems: "center",

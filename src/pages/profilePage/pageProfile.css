@@ -1,14 +1,15 @@
-.info-box-container{
-    font-family: IRANSansX,'serif';
+.info-box-container {
+    font-family: IRANSansX, 'serif';
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     background-color: white;
     height: 35vh;
-    text-align:justify;
+    text-align: justify;
 }
-.info-box{
+
+.info-box {
     background-color: #f7f7f7;
     border-radius: 0 0 20px 20px;
     width: 90%;
@@ -20,37 +21,42 @@
     align-items: center;
     justify-content: space-around;
 }
-.info-box .edit-form-container{
-    width:100%;
+
+.info-box .edit-form-container {
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
 }
-.info-box .edit-form{
-    width:100%;
+
+.info-box .edit-form {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
 }
-.edit-title{
+
+.edit-title {
     margin-right: 100px;
     color: #24262b;
     position: relative;
 }
-.edit-title::after{
+
+.edit-title::after {
     direction: rtl;
     position: absolute;
-    right:0;
-    bottom:-8px;
+    right: 0;
+    bottom: -8px;
     background-color: #ff7314;
     content: '';
     height: 2px;
     width: 20%;
 }
+
 .edit-field {
-    width: 30%  ;
+    width: 30%;
     position: relative;
     max-width: 380px;
     height: 55px;
@@ -63,6 +69,7 @@
     grid-template-columns: 15% 85%;
     padding: 0 1rem 0 0;
 }
+
 .edit-field input {
     background: none;
     outline: none;
@@ -77,6 +84,7 @@
     color: #aaa;
     font-weight: 500;
 }
+
 .editBtn {
     width: 150px;
     height: 49px;
@@ -98,7 +106,8 @@
     background-color: #ff006c;
     color: white;
 }
-.customers{
+
+.customers {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -106,7 +115,7 @@
     width: 100%;
 }
 
-.edit-box{
+.edit-box {
     width: 150%;
     margin-top: 40px;
 }
@@ -121,6 +130,7 @@
     text-align: center;
     justify-content: space-around;
 }
+
 .buy-button .buy {
     position: relative;
     border: none;
@@ -129,9 +139,18 @@
     height: 40px;
     margin: 10px 10px 10px 20px;
 }
-.buy-button{
-    background-color: rgba(167, 167, 167, 0.74);
+
+.buy-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
+
+.buy-button p {
+    margin: 0;
+}
+
 .buy-button .buy p {
     position: absolute;
     font-weight: bold;
@@ -142,12 +161,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(232, 7, 7, 0.15);
-    box-shadow: 0 0 10px rgba(250, 5, 5, 0.2);
-    border-top: 1px solid rgba(238, 6, 6, 0.1);
-    border-bottom: 1px solid rgba(238, 6, 6, 0.1);
+    background: rgba(5, 250, 9, 0.15);
+    box-shadow: 0 0 5px rgba(5, 250, 9, 0.73);
+    border-top: 1px solid rgba(5, 250, 9, 0.2);
+    border-bottom: 1px solid rgba(5, 250, 9, 0.2);
     border-radius: 10px;
-    color: #f3f3f3;
+    color: rgba(3, 3, 3, 0.46);
     letter-spacing: 1px;
     z-index: 1;
     text-decoration: none;
@@ -163,7 +182,7 @@
     left: 0;
     width: 50%;
     height: 100%;
-    background: linear-gradient(to left, rgba(250, 107, 107, 0.36), transparent);
+    background: linear-gradient(to left, rgba(66, 213, 68, 0.36), transparent);
     transform: skewX(45deg) translateX(0);
     transition: 0.5s;
 }
@@ -171,6 +190,11 @@
 .buy-button .buy:hover p::before {
     transform: skewX(45deg) translateX(200%);
     border: none;
+}
+
+.buy-button .buy:hover p {
+    color: #f3f3f3;
+    transition: all 0.7s ease-in-out;
 }
 
 .buy-button .buy::before {
@@ -182,7 +206,7 @@
     bottom: -5px;
     width: 30px;
     height: 10px;
-    background: #d90e0e;
+    background: #0ed929;
     border-radius: 10px;
     transition: 0.3s;
     transition-delay: 0s;
@@ -195,6 +219,7 @@
     border-radius: 30px;
     transition-delay: 0.3s;
 }
+
 .buy-button .buy::after {
     content: '';
     position: absolute;
@@ -204,7 +229,7 @@
     top: -5px;
     width: 30px;
     height: 10px;
-    background: #d90e0e;
+    background: #0ed929;
     border-radius: 10px;
     transition: 0.3s;
     transition-delay: 0s;
@@ -220,9 +245,9 @@
 
 .buy-button .buy:nth-child(1)::before,
 .buy-button .buy:nth-child(1)::after {
-    background: #ff1f71;
-    box-shadow: 0 0 5px #ff1f71,
-    0 0 15px #ff1f71,
-    0 0 30px #ff1f71,
-    0 0 60px #ff1f71;
+    background: #1fff2a;
+    box-shadow: 0 0 50px #1fff2a,
+    0 0 15px #1fff2a,
+    0 0 30px #1fff2a,
+    0 0 60px #1fff2a;
 }

@@ -5,8 +5,11 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {TicketBasketContext} from "../../contexts/TicketBasketContext";
 import shaparak from './images/Shaparak.png'
 import captcha from './images/captcha.png'
+import {useNavigate} from "react-router-dom";
 
 export const PaymentPage = () => {
+ const navigate=useNavigate();
+
     return (
         <div className="payment-container">
             <img src={shaparak} alt="shaparak" style={{width: "10%"}}/>
@@ -61,6 +64,29 @@ export const PaymentPage = () => {
             <div className="pay-box">
                 <input type="checkbox" style={{marginLeft: "10px"}}/>
                 اطلاعات کارت ذخیره شود؟
+            </div>
+            <div className="pay-box" style={{padding:"20px"}}>
+                <input type="submit" value={"پرداخت"} style={{
+                    width: "100px",
+                    boxShadow: " 0 2px 5px rgba(0, 0, 0, 0.2)",
+                    padding: "5px",
+                    border: "none",
+                    marginLeft:'100px',
+                    marginTop:'30px',
+                    borderRadius: "10px",
+                    color: "#fff",
+                    backgroundColor: "green"
+                }}/>
+                <input type="submit" value={"لغو"} style={{
+                    width: "100px",
+                    boxShadow: " 0 2px 5px rgba(0, 0, 0, 0.2)",
+                    padding: "5px",
+                    border: "none",
+                    borderRadius: "10px",
+                    marginTop:'30px',
+                    color: "#fff",
+                    backgroundColor: "grey"
+                }} onClick={(e)=>navigate("/profile")}/>
             </div>
         </div>
     )

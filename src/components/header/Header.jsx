@@ -34,6 +34,8 @@ const Header = () => {
                     <li>
                         <a href="/profile">پیگیری بلیط</a>
                     </li>
+                    <li><a href="https://3click.com/hotel">هتل</a></li>
+                    <li><a href="https://3click.com/tour">تور</a></li>
                     <li><a href="/about">درباره ما</a></li>
                     <li><a href="/callus">تماس باما</a></li>
                 </ul>

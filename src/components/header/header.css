@@ -15,6 +15,7 @@ li, a {
 }
 
 header {
+    transition: all 0.5s ease-in-out;
     height: 10vh;
     display: flex;
     justify-content: space-between;
@@ -137,4 +138,18 @@ header .logo {
 }
 .MuiButtonBase-root,.MuiBadge-root{
     direction: rtl;
+}
+
+@media screen and (max-width: 800px) {
+    header {
+        transition: all 0.5s ease-in-out;
+        /*background-color: green;*/
+        font-size: 8px;
+        height:30vh;
+        flex-direction: column;
+    }
+    .login button,.login a{
+        padding: 5px;
+        height: 50px;
+    }
 }

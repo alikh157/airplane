@@ -72,7 +72,7 @@ export const MainPage = () => {
             <div className="results">
                 {
                     searchResult.comeBackTrips &&
-                        <p style={{marginTop: "20px", marginBottom: "0"}}>بلیط برگشت</p>
+                    <p style={{marginTop: "20px", marginBottom: "0"}}>بلیط برگشت</p>
                 }
                 {
                     //rendered list of tickets from an array {with help of useState}
@@ -83,10 +83,7 @@ export const MainPage = () => {
                 }
             </div>
             <div className={"suggest"}>
-                <a href="#">
-                    <img src={suggestImg} alt="banner-desktop"
-                         style={{"width": '800px', "alignItems": "center", "justifyContent": "space-between"}}/>
-                </a>
+                <a href="https://3click.com/suggestion"></a>
             </div>
             <Footer/>
         </div>

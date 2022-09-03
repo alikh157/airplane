@@ -19,10 +19,10 @@ export const ProfilePage = () => {
     const {customerBasket, setCustomerBasket} = useState({});
 
     let finalPrice = 0;
-
-    // for (let i = 0; i < ticketBasket.length; i++) {
-    //     finalPrice += ticketBasket[i].trip.tripPrice * ticketBasket[i].amount;
-    // }
+    console.log(ticketBasket)
+    for (let i = 0; i < ticketBasket.length; i++) {
+        finalPrice += ticketBasket[i].trip.tripPrice * ticketBasket[i].amount;
+    }
 
     const submitEditHandler = (e) => {
         e.preventDefault();
@@ -42,6 +42,7 @@ export const ProfilePage = () => {
     const buyHandler = (e) => {
         e.preventDefault();
         console.log("buyHandler")
+        navigate('/pay')
         // api.ticketBuy(customerBasket,{})
     }
     useEffect(() => {

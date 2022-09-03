@@ -115,27 +115,34 @@ const SearchBar = () => {
                 </div>
             </form>
             <div className="category-list">
-                <div className="category" onClick={e => {
-                    setFormData({...formData, BusinessOrEconomy: 'Business'})
-                }}>
+                <div className={formData.BusinessOrEconomy == 'Business' ? 'categoryActive' : 'category'}
+                     onClick={e => {
+                         formData.BusinessOrEconomy === 'Business' ?
+                             setFormData({...formData, BusinessOrEconomy: ''}):setFormData({...formData, BusinessOrEconomy: 'Business'})
+                     }}>
                     <img src={business} alt="business"/>
                     <p>پرواز بیزینس</p>
                 </div>
-                <div className="category" onClick={e => {
-                    setFormData({...formData, BusinessOrEconomy: 'Economy'})
+                <div className={formData.BusinessOrEconomy == 'Economy' ? 'categoryActive' : 'category'} onClick={e => {
+                    formData.BusinessOrEconomy === 'Economy' ?
+                        setFormData({...formData, BusinessOrEconomy: ''}):setFormData({...formData, BusinessOrEconomy: 'Economy'})
                 }}>
                     <img src={economy} alt="economy"/>
                     <p>پرواز اقتصادی</p>
                 </div>
-                <div className="category" onClick={e => {
-                    setFormData({...formData, InternalOrExternal: 'Internal'})
-                }}>
+                <div className={formData.InternalOrExternal == 'Internal' ? 'categoryActive' : 'category'}
+                     onClick={e => {
+                         formData.InternalOrExternal === 'Internal' ?
+                             setFormData({...formData, InternalOrExternal: ''}):setFormData({...formData, InternalOrExternal: 'Internal'})
+                     }}>
                     <img src={internal} alt="internal"/>
                     <p>پرواز داخلی</p>
                 </div>
-                <div className="category" onClick={e => {
-                    setFormData({...formData, InternalOrExternal: 'External'})
-                }}>
+                <div className={formData.InternalOrExternal == 'External' ? 'categoryActive' : 'category'}
+                     onClick={e => {
+                         formData.InternalOrExternal === 'External' ?
+                         setFormData({...formData, InternalOrExternal: ''}):setFormData({...formData, InternalOrExternal: 'External'})
+                     }}>
                     <img src={globe} alt="international"/>
                     <p>پرواز خارجی</p>
                 </div>
