@@ -1,4 +1,4 @@
-.buy-container{
+.buy-container {
     height: 100%;
     width: 100%;
     display: flex;
@@ -6,11 +6,12 @@
     align-items: center;
     justify-content: center;
 }
-.edit-box{
+
+.edit-box {
     border-radius: 10px;
     color: #ff7314;
     background-color: #f7f7f7;
-    box-shadow:0 0  10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     height: 400px;
     display: flex;
     flex-direction: row;
@@ -18,28 +19,32 @@
     justify-content: space-around;
     padding: 10px;
 }
-.box1, .box2{
+
+.box1, .box2 {
     display: flex;
     flex-direction: column;
     height: 100%;
     align-items: center;
     justify-content: space-between;
 }
-.box1 .information , .box2 .information{
+
+.box1 .information, .box2 .information {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
-.box1 .information input, .box2 .information input{
+
+.box1 .information input, .box2 .information input {
     margin-right: 10px;
     border-radius: 10px;
     border: 1px #ff7314 solid;
     padding: 5px 10px 5px;
     text-shadow: #ff7314;
-    box-shadow:0 0 20px rgba(246, 146, 146, 0.52);
+    box-shadow: 0 0 20px rgba(246, 146, 146, 0.52);
 }
-.box1 .information ::placeholder , .box2 .information ::placeholder{
+
+.box1 .information ::placeholder, .box2 .information ::placeholder {
     font-size: 12px;
 }
 
@@ -117,6 +122,7 @@
     border-radius: 30px;
     transition-delay: 0.3s;
 }
+
 .ticket-buy-button .buy::after {
     content: '';
     position: absolute;
@@ -147,4 +153,14 @@
     0 0 15px #24dc24,
     0 0 30px #24dc24,
     0 0 60px #24dc24;
+}
+
+@media screen and (max-width: 650px) {
+    .edit-box {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .box1{
+        margin-bottom: 10px;
+    }
 }

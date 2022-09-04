@@ -7,7 +7,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import signupImage from './images/undraw_aircraft_re_m05i.svg';
 import signinImage from './images/undraw_login_re_4vu2.svg';
 import * as api from "../../api";
-
+import { SnackbarProvider, useSnackbar } from 'notistack';
 
 function change() {
     const sign_in_btn = document.querySelector("#sign-in-btn");
@@ -23,6 +23,7 @@ function change() {
 }
 
 export const Login = () => {
+    const { enqueueSnackbar, closeSnackbar } = useSnackbar()
     const [account, setAccount] = useState([]);
     const navigate = useNavigate();
     const submitLoginHandler = (e) => {
@@ -30,7 +31,9 @@ export const Login = () => {
         delete account.accountEmail;
         api.loginAccount(account, {
             onError: (err) => {
-                console.log(err.message);
+                enqueueSnackbar(err,{
+                    variant: 'error',
+                })
             }, onSuccess: (msg) => {
                 localStorage.setItem('auth-token', msg);
                 localStorage.setItem('accountPhoneNumber', account.accountPhoneNumber);

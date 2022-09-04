@@ -26,6 +26,7 @@
     "jsonapi-serializer": "^3.6.7",
     "moment": "^2.29.4",
     "moment-jalaali": "^0.9.6",
+    "notistack": "^2.0.5",
     "random-string-generator": "^1.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

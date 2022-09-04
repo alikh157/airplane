@@ -66,6 +66,7 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     display: grid;
+    /*flex-direction: row;*/
     grid-template-columns: 15% 85%;
     padding: 0 1rem 0 0;
 }
@@ -75,6 +76,8 @@
     outline: none;
     border: none;
     line-height: 1;
+    width: 150px;
+    margin-right: 5px;
     font-weight: 600;
     font-size: 1.1rem;
     color: #333;
@@ -250,4 +253,19 @@
     0 0 15px #1fff2a,
     0 0 30px #1fff2a,
     0 0 60px #1fff2a;
+}
+
+@media screen and (max-width: 660px){
+    .edit-form{
+        flex-direction: row!important;
+    }
+    .edit-field{
+        width: 60%;
+    }
+    .edit-field input{
+        font-size: 14px;
+    }
+    .edit-form-container{
+        flex-direction: column !important;
+    }
 }

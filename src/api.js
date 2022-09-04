@@ -75,7 +75,8 @@ export const loginAccount = (account, {onError = () => {}, onSuccess = () => {}}
     }).then((res) => {
         onSuccess(res.data.data.attributes['auth-token'])
     }).catch((error) => {
-        onError(error);
+        // console.log(error.response.data.errors[0].detail)
+            onError(error.response.data.errors[0].detail);
     })
 }
 export const registerAccount = (account, {onError = () => {
@@ -88,14 +89,19 @@ export const registerAccount = (account, {onError = () => {
     }).then((res) => {
         onSuccess(res.status)
     }).catch((error) => {
-        onError(error);
+        onError(error.response.data.errors[0].detail);
+
     })
 }
 export const updateAccount = (account, {onError = () => {}, onSuccess = () => {}}) => {
     axios({
         method: 'post',
         url: apiConstant.BASE_URL + '/account/update',
-        data: account,
+        data: {
+            accountPlainPassword:account.accountPlainPassword,
+            accountPhoneNumber:account.accountPhoneNumber,
+            accountEmail:account.accountEmail,
+        },
         headers: {
             'auth-token': window.localStorage.getItem("auth-token")
         }
@@ -105,7 +111,8 @@ export const updateAccount = (account, {onError = () => {}, onSuccess = () => {}
             onSuccess(account, res.status);
         });
     }).catch((error) => {
-        onError(error);
+        onError(error.response.data.errors[0].detail);
+
     })
 }
 export const readAccount = ({onError = () => {}, onSuccess = () => {}}) => {

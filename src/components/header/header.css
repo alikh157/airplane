@@ -124,12 +124,12 @@ header .logo {
     border: 2px solid #ff7314ff;
     transition:all 300ms ease-in-out;
 }
-.login button:hover .iconUser {
+.login a:hover .iconUser {
     padding-right: 20px;
     opacity: 1;
 }
 
-.login button:hover.iconUser:after {
+.login a:hover.iconUser:after {
     opacity: 1;
     left: 0;
 }

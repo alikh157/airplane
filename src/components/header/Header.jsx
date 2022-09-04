@@ -27,7 +27,7 @@ const Header = () => {
     const classes = useStyles();
     return (
         <header>
-            <img className={"logo"} src={logo} alt="logo" height={"70px"}/>
+            <img className={"logo"} src={logo} alt="logo" height={"80px"}/>
             <nav>
                 <ul className="navLinks">
                     <li><a href="/">صفحه اصلی</a></li>

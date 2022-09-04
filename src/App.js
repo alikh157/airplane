@@ -14,6 +14,7 @@ import {AccountContextProvider} from "./contexts/AccountContext";
 import {TicketBasketContextProvider} from "./contexts/TicketBasketContext";
 import RTL from './RTL';
 import {Buy} from "./components/buy/Buy";
+import {SnackbarProvider, enqueueSnackbar} from 'notistack'
 
 const baseTheme = createTheme({
     direction: "rtl",
@@ -30,8 +31,9 @@ function App() {
     return (
         <RTL>
             <div className="App">
-                <TicketBasketContextProvider>
-                    <SearchResultContextProvider>
+                <SnackbarProvider>
+                    <TicketBasketContextProvider>
+                        <SearchResultContextProvider>
                             <AccountContextProvider>
                                 <Routes>
                                     <Route path={"/"} element={<MainPage/>}/>
@@ -46,8 +48,9 @@ function App() {
                                     <Route path={"/pay"} element={<PaymentPage/>}/>
                                 </Routes>
                             </AccountContextProvider>
-                    </SearchResultContextProvider>
-                </TicketBasketContextProvider>
+                        </SearchResultContextProvider>
+                    </TicketBasketContextProvider>
+                </SnackbarProvider>
             </div>
         </RTL>
     );

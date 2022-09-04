@@ -10,14 +10,18 @@ import {solid} from "@fortawesome/fontawesome-svg-core/import.macro";
 import {Buy} from '../../components/buy/Buy'
 import {TicketBasketContext} from "../../contexts/TicketBasketContext";
 import {Trip} from '../../components/trip/Trip'
+import {useSnackbar} from "notistack";
 
 export const ProfilePage = () => {
     const navigate = useNavigate();
-
+    const {enqueueSnackbar, closeSnackbar} = useSnackbar()
+    const [isVisible, setVisible] = useState(false);
     const {myAccount, setMyAccount} = useContext(AccountContext);
     const {ticketBasket, setTicketBasket} = useContext(TicketBasketContext);
     const {customerBasket, setCustomerBasket} = useState({});
-
+    const toggle = () => {
+        setVisible(!isVisible);
+    };
     let finalPrice = 0;
     console.log(ticketBasket)
     for (let i = 0; i < ticketBasket.length; i++) {
@@ -28,13 +32,18 @@ export const ProfilePage = () => {
         e.preventDefault();
         api.updateAccount(myAccount, {
             onError: (err) => {
+                enqueueSnackbar(err, {
+                    variant: 'error',
+                })
                 console.log(err.message);
             }, onSuccess: (account, status) => {
-                console.log(status)
                 if (status === 200) {
+                    enqueueSnackbar("تغییرات با موفقیت اعمال شد.", {
+                        variant: 'success',
+                    })
                     window.localStorage.removeItem('accountPhoneNumber');
                     window.localStorage.setItem('accountPhoneNumber', account.accountPhoneNumber);
-                    window.location.reload()
+                    window.location.reload();
                 }
             }
         })
@@ -60,6 +69,16 @@ export const ProfilePage = () => {
         })
 
     }, []);
+    // let state = {
+    //     type: 'text',
+    // }
+    // const handleClick = () => {
+    //     console.log(state)
+    //     state.type === 'text' ? state = {type: 'password'} : state = {
+    //         type: 'text'
+    //     }
+    // }
+
     return (
         <div className="profile-container">
             <Header/>
@@ -95,14 +114,31 @@ export const ProfilePage = () => {
                                     textAlign: "center",
                                     lineHeight: "55px",
                                     color: "#acacac",
-                                    fontSize: "1.1rem"
+                                    fontSize: "14px"
                                 }}/>
-                                <input type="password" placeholder={"رمزعبور"}
-                                       onChange={e => setMyAccount({
-                                           ...myAccount,
-                                           accountPlainPassword: e.target.value
-                                       })}
-                                       value={myAccount.accountPlainPassword}/>
+                                <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center',justifyContent:'space-between'}}>
+                                    <input type={!isVisible ? "password" : "text"} placeholder={"رمزعبور"}
+                                           onChange={e => setMyAccount({
+                                               ...myAccount,
+                                               accountPlainPassword: e.target.value
+                                           })}
+                                           style={{width:"90px"}}
+                                           value={myAccount.accountPlainPassword}/>
+                                    <span className="icon" onClick={toggle}>
+                                 {isVisible ? <FontAwesomeIcon icon={solid('eye')} style={{
+                                     textAlign: "center",
+                                     lineHeight: "55px",
+                                     color: "#acacac",
+                                     fontSize: "12px"
+                                 }}/> : <FontAwesomeIcon icon={solid('eye-slash')} style={{
+                                     textAlign: "center",
+                                     lineHeight: "55px",
+                                     color: "#acacac",
+                                     fontSize: "12px"
+                                 }}/>}
+                               </span>
+                                </div>
+
                             </div>
                         </div>
                         <input type="submit" className="editBtn" value={"ذخیره"}/>
